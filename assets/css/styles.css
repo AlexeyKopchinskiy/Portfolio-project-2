@@ -37,6 +37,7 @@ h4 {
 h1,
 h2 {
     text-transform: uppercase;
+    text-align: center;
 }
 h2 {
     margin-bottom: 2rem;
@@ -54,3 +55,35 @@ A:hover{
     color: var(--link-color);
 }
 /* End of Global styles */
+
+/* Page structure Styles */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
