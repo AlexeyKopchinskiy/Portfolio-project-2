@@ -7,7 +7,7 @@
     --secondary-font: "Domine", cursive;
     --primary-color: #2E3145; /* Space cadet */
     --secondary-color: #212331; /* Raisin black*/
-    --tertiary-color: #2E353F; /* Gunmetal */
+    --tertiary-color: #605598; /* Gunmetal */
     --shade-color: #2A2E37; /* Gunmetal */
     --highlight-color: #232629; /* Eerie black */
     --highlight-color-2: #54677a; /* light slate gray */
@@ -30,11 +30,14 @@ h1{
     margin: 20px;
 }
 h2,
-h3,
-h4 {
+h3 {
     font-family: var(--secondary-font);
-    color: var(--primary-color);
+    color: var(--highlight-color);
     text-align: center;
+}
+h4 {
+    color: var(--highlight-color-light);
+    padding-bottom:  20px;
 }
 
 h1,
@@ -45,7 +48,7 @@ h2 {
 h2 {
     margin-bottom: 2rem;
     border-bottom: 1px #aba46172 solid;
-    text-shadow: rgb(255, 255, 255) 2px 2px 1px;
+    text-shadow: rgb(132, 159, 205) 2px 2px 1px;
 }
 h6{
     font-size: smaller;
@@ -89,4 +92,55 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+}
+
+.quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: stretch; /* Ensure all quiz sections have equal height */
+}
+
+.quiz-section {
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 20px;
+    width: 28%;
+    background-color: var(--tertiary-color);
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Add padding between quiz questions and answers */
+.quiz-section .question {
+    padding-bottom: 20px; /* Add padding to the bottom of the question */
+}
+
+.quiz-section ul.no-bullets {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.quiz-section input[type="radio"] {
+    margin-right: 5px;
+}
+
+.quiz-section input[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.quiz-icon {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
 }
