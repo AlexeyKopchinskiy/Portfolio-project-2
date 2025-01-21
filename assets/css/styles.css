@@ -29,7 +29,6 @@ h1{
     color: var(--highlight-color-light);
     margin: 20px;
 }
-h2,
 h3 {
     font-family: var(--secondary-font);
     color: var(--highlight-color);
@@ -47,8 +46,9 @@ h2 {
 }
 h2 {
     margin-bottom: 2rem;
+    padding-bottom: 5px;
     border-bottom: 1px #aba46172 solid;
-    text-shadow: rgb(132, 159, 205) 2px 2px 1px;
+    /* text-shadow: rgb(132, 159, 205) 2px 2px 1px; */
 }
 h6{
     font-size: smaller;
@@ -95,24 +95,26 @@ nav ul li a {
 }
 
 .quiz-container {
+    /* width: 90%; */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap:wrap;
+    justify-content:space-around;
     margin-bottom: 20px;
-    align-items: stretch; /* Ensure all quiz sections have equal height */
+    align-items:center stretch; /* Ensusre all quiz sections have equal height */
 }
 
 .quiz-section {
     border: 1px solid #ccc;
     border-radius: 7px;
     padding: 20px;
-    width: 28%;
+    width: 30%;
     background-color: var(--tertiary-color);
     margin: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: stretch;
+    box-sizing: border-box;
 }
 
 /* Add padding between quiz questions and answers */
@@ -143,4 +145,47 @@ nav ul li a {
     width: 100px;
     height: 100px;
     margin: 10px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 992px) {
+    .quiz-section {
+        width: 45% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .quiz-section {
+        width: 100%;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .quiz-section {
+        min-width: 90%;
+        margin: 5px;
+        display:flex;
+    }
+    body{
+        font: 4vw;
+    }
+    h1{
+        font-size: 6vw;
+    }
+    h2{
+        font-size: 5vw;
+    }
+    h3{
+        font-size: 4vw;
+    }
+    h4{
+        font-size: 4vw;
+    }
+    li{
+        font-size: 3vw;
+    }
+    input{
+        font-size: 3vw;
+    }
 }
