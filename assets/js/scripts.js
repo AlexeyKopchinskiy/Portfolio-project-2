@@ -20,6 +20,15 @@ function getQuizContent() {
 				const scoreElement = document.getElementById(scoreId); // Get the score element
 				let currentQuestionIndex = 0; // Index of the current question
 				let score = 0; // Score of the user for the current quiz
+
+				// Function to display the next question
+				function loadQuestion() {
+					quizForm.innerHTML = ""; // Clear the form
+					const q = quiz[currentQuestionIndex]; // Get the current question
+					shuffleArray(q.options); // Shuffle the questioms so that they disply randomly
+					const questionElement = document.createElement("div"); // Create a div element for the question
+					questionElement.innerHTML = `<label>${q.question}</label><br>`; // Display current question
+				}
 			});
 	}
 
