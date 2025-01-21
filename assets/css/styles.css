@@ -189,3 +189,25 @@ nav ul li a {
         font-size: 3vw;
     }
 }
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    color: green;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+    font-weight: bold;
+}
