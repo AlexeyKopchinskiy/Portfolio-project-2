@@ -7,6 +7,15 @@ function getQuizContent() {
 	let totalScore = 0; // Total score of the user
 	let quizzesCompleted = 0; // Number of quizzes completed
 	let maxPossibleScore = 0; // Maximum possible score
+
+	// Function to load a quiz
+	function loadQuiz(quizType, formId, scoreId) {}
+
+	// Load quizzes
+	loadQuiz("biology", "biologyForm", "biologyScore");
+	loadQuiz("astronomy", "astronomyForm", "astronomyScore");
+	loadQuiz("geography", "geographyForm", "geographyScore");
+	loadQuiz("history", "historyForm", "historyScore");
 }
 
 // Event to initiate the quiz when the page loads
