@@ -1,0 +1,17 @@
+[
+	{
+		"question": "What is the capital of France?",
+		"options": ["Paris", "London", "Berlin", "Madrid"],
+		"answer": "Paris"
+	},
+	{
+		"question": "Which continent is the Sahara Desert located in?",
+		"options": ["Africa", "Asia", "Australia", "South America"],
+		"answer": "Africa"
+	},
+	{
+		"question": "What is the longest river in the world?",
+		"options": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+		"answer": "Nile"
+	}
+]

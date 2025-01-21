@@ -1,0 +1,27 @@
+[
+	{
+		"question": "Who was the first President of the United States?",
+		"options": ["John Adams", "Thomas Jefferson", "George Washington", "James Madison"],
+		"answer": "George Washington"
+	},
+	{
+		"question": "Who defeated persians and conquered the largest empire in the world?",
+		"options": ["Genghis Khan", "Julius Caesar", "Napoleon Bonaparte", "Alexander the Great"],
+		"answer": "Alexander the Great"
+	},
+	{
+		"question": "What punishment did God inflict onto the world in the story of Noah's Ark?",
+		"options": ["Flood", "Earthquake", "Drought", "Tornado"],
+		"answer": "Flood"
+	},
+	{
+		"question": "What was the punishment Japan recieved for attacking Pearl Harbor?",
+		"options": [
+			"Tight sanctions",
+			"Atomic Bomb",
+			"Arrest of the Emperor",
+			"Disruption in soy souse trading"
+		],
+		"answer": "Atomic Bomb"
+	}
+]

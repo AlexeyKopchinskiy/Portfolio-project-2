@@ -1,0 +1,17 @@
+[
+	{
+		"question": "Which planet is known as the Red Planet?",
+		"options": ["Mars", "Venus", "Jupiter", "Saturn"],
+		"answer": "Mars"
+	},
+	{
+		"question": "What is the largest planet in our solar system?",
+		"options": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+		"answer": "Jupiter"
+	},
+	{
+		"question": "What is the name of our galaxy?",
+		"options": ["Milky Way", "Andromeda", "Triangulum", "Whirlpool"],
+		"answer": "Milky Way"
+	}
+]
