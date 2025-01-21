@@ -9,7 +9,19 @@ function getQuizContent() {
 	let maxPossibleScore = 0; // Maximum possible score
 
 	// Function to load a quiz
-	function loadQuiz(quizType, formId, scoreId) {}
+	function loadQuiz(quizType, formId, scoreId) {
+		// Fetch quiz questions from the JSON files
+		// amd display them on the page
+		fetch(`includes/${quizType}.json`)
+			.then((response) => response.json()) // Parse the JSON data
+			.then((quiz) => {
+				maxPossibleScore += quiz.length; // Add the number of questions to the maximum possible score
+				const quizForm = document.getElementById(formId); // Get the form element
+				const scoreElement = document.getElementById(scoreId); // Get the score element
+				let currentQuestionIndex = 0; // Index of the current question
+				let score = 0; // Score of the user for the current quiz
+			});
+	}
 
 	// Load quizzes
 	loadQuiz("biology", "biologyForm", "biologyScore");
