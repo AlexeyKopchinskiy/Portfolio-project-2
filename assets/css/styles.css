@@ -25,7 +25,10 @@ body {
     flex-direction: column;
     background-color: var(--shade-color);
 }
-h1,
+h1{
+    color: var(--highlight-color-light);
+    margin: 20px;
+}
 h2,
 h3,
 h4 {

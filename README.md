@@ -7,4 +7,6 @@ The goal of the website is to test the user understanding of the basic facts rel
 
 **Website Features**
 
+The website will feature four quizes with topics targeting knowledge in biology, astronomy, geography and history. Each qiuz-box will hold 3 to 5 questions on relevant topic. Within each mini-session there will be several sets of questions. After a set is complete, a temporary score will appear next to the minimum pass-score.
+
 **Landing page**
