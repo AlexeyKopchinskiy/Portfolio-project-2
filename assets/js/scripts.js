@@ -12,7 +12,7 @@ function getQuizContent() {
 	function loadQuiz(quizType, formId, scoreId) {
 		// Fetch quiz questions from the JSON files
 		// amd display them on the page
-		fetch(`includes/${quizType}.json`)
+		fetch(`assets/js/${quizType}.json`)
 			.then((response) => response.json()) // Parse the JSON data
 			.then((quiz) => {
 				maxPossibleScore += quiz.length; // Add the number of questions to the maximum possible score
