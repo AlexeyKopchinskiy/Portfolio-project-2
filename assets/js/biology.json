@@ -13,15 +13,5 @@
 		"question": "Which organelle is responsible for photosynthesis?",
 		"options": ["Chloroplast", "Mitochondria", "Nucleus", "Ribosome"],
 		"answer": "Chloroplast"
-	},
-	{
-		"question": "What is the largest organ in the human body?",
-		"options": ["Skin", "Liver", "Heart", "Lungs"],
-		"answer": "Skin"
-	},
-	{
-		"question": "What is the process by which plants make their food?",
-		"options": ["Photosynthesis", "Respiration", "Transpiration", "Pollination"],
-		"answer": "Photosynthesis"
 	}
 ]

@@ -77,9 +77,17 @@ function getQuizContent() {
 					if (currentQuestionIndex < quiz.length) {
 						loadQuestion();
 					} else {
+						// Display achieved score in different colors depending on the score
+						if (score === quiz.length) {
+							scoreElement.classList.add("green");
+						} else if (score == quiz.length - 1) {
+							scoreElement.classList.add("orange");
+						} else {
+							scoreElement.classList.add("red");
+						}
 						// Update the total score and display the score for the current quiz
 						totalScore += score;
-						scoreElement.textContent = `Your score: ${score}`; // Display the score
+						scoreElement.textContent = `Your score: ${score} out of ${quiz.length}`; // Display the score
 						quizzesCompleted++; // Increment the number of quizzes completed
 						// Display the total score container after the first quiz
 						if (quizzesCompleted === 1) {
@@ -155,7 +163,7 @@ function getQuizContent() {
 		document.getElementById("biologyScore").textContent = ""; // Clear the biology score
 		document.getElementById("astronomyScore").textContent = ""; // Clear the astronomy score
 		document.getElementById("geographyScore").textContent = ""; // Clear the geography score
-		document.getElementById("historyyScore").textContent = ""; // Clear the history score
+		document.getElementById("historyScore").textContent = ""; // Clear the history score
 		// Load quizzes
 		loadQuiz("biology", "biologyForm", "biologyScore");
 		loadQuiz("astronomy", "astronomyForm", "astronomyScore");

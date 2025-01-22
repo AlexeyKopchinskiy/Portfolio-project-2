@@ -13,15 +13,5 @@
 		"question": "What punishment did God inflict onto the world in the story of Noah's Ark?",
 		"options": ["Flood", "Earthquake", "Drought", "Tornado"],
 		"answer": "Flood"
-	},
-	{
-		"question": "What was the punishment Japan recieved for attacking Pearl Harbor?",
-		"options": [
-			"Tight sanctions",
-			"Atomic Bomb",
-			"Arrest of the Emperor",
-			"Disruption in soy souse trading"
-		],
-		"answer": "Atomic Bomb"
 	}
 ]
