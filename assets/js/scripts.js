@@ -59,6 +59,15 @@ function getQuizContent() {
 						score++;
 					}
 					currentQuestionIndex++; // Move to the next question
+
+					// Checking the progress of the quiz:
+					// Load the next question or finish the quiz if all questions have been answered
+					if (currentQuestionIndex < quiz.length) {
+						loadQuestion();
+					} else {
+					}
+
+					loadQuestion(); // Load the next question
 				});
 			});
 	}
