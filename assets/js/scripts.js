@@ -111,6 +111,10 @@ function getQuizContent() {
 							tryAgainButton.addEventListener("click", resetQuizzes); // Add an event listener to the button
 							quizForm.appendChild(tryAgainButton); // Append the button to the form
 						}
+
+						// Display the final message after all quizzes are completed
+						if (quizzesCompleted === quizzes.length) {
+						}
 					}
 				});
 
