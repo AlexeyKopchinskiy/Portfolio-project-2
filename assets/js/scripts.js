@@ -43,7 +43,17 @@ function getQuizContent() {
 				}
 
 				// Event listener for form submission
-				quizForm.addEventListener("submit", function (event) {});
+				quizForm.addEventListener("submit", function (event) {
+					event.preventDefault(); // Prevent the form from submitting
+					// Check if an option is selected
+					const selectedOption = document.querySelector(
+						`input[name="${quizType}Question${currentQuestionIndex}"]:checked`
+					);
+					if (!selectedOption) {
+						alert("Please select an answer!");
+						return;
+					}
+				});
 			});
 	}
 
