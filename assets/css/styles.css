@@ -120,6 +120,19 @@ nav ul li a {
     justify-content: stretch;
     box-sizing: border-box;
 }
+.quiz-section-generic {
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 20px;
+    width: 60%;
+    background-color: var(--tertiary-color);
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    box-sizing: border-box;
+}
 
 /* Add padding between quiz questions and answers */
 .quiz-section .question {
