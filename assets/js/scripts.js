@@ -8,6 +8,14 @@ function getQuizContent() {
 	let quizzesCompleted = 0; // Number of quizzes completed
 	let maxPossibleScore = 0; // Maximum possible score
 
+	// Function to shuffle an array (Fisher-Yates algorithm)
+	function shuffleArray(array) {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+	}
+
 	// Function to load a quiz
 	function loadQuiz(quizType, formId, scoreId) {
 		// Fetch quiz questions from the JSON files
@@ -65,6 +73,8 @@ function getQuizContent() {
 					if (currentQuestionIndex < quiz.length) {
 						loadQuestion();
 					} else {
+						// Update the total score and display the score for the current quiz
+						totalScore += score;
 					}
 
 					loadQuestion(); // Load the next question
