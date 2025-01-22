@@ -28,7 +28,15 @@ function getQuizContent() {
 					shuffleArray(q.options); // Shuffle the questioms so that they disply randomly
 					const questionElement = document.createElement("div"); // Create a div element for the question
 					questionElement.innerHTML = `<label>${q.question}</label><br>`; // Display current question
+
+					// Create radio buttons for each option from the aray of questions
+					q.options.forEach((option) => {
+						questionElement.innerHTML += `<input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label><br>`;
+					});
 				}
+
+				// Event listener for form submission
+				quizForm.addEventListener("submit", function (event) {});
 			});
 	}
 
