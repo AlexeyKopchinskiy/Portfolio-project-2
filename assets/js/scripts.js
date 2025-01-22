@@ -114,6 +114,8 @@ function getQuizContent() {
 
 						// Display the final message after all quizzes are completed
 						if (quizzesCompleted === quizzes.length) {
+							document.getElementById("totalScore").classList.add("highlight"); // Highlight the total score
+							document.getElementById("resetButton").classList.remove("hidden"); // Display the reset button
 						}
 					}
 				});
