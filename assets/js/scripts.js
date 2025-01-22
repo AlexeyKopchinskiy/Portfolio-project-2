@@ -1,14 +1,17 @@
-// Function that gets the quiz content from the forms on the page
-// and displays the quiz score
+/*
+	The getQuizContent() is the main function that gets the quiz content from the forms on the page.
+	It displays the quiz score and the total score of the user.
+	The function also checks if the user has passed the test and displays a message accordingly.
+	The function also allows the user to reset the quizzes and start again.
+*/
 function getQuizContent() {
-	// console.log("getQuizContent() called"); // Check if the function is called
 	// Set list of quiz types and initial score variables
 	const quizzes = ["biology", "astronomy", "geography", "history"]; // List of quiz types
 	let totalScore = 0; // Total score of the user
 	let quizzesCompleted = 0; // Number of quizzes completed
 	let maxPossibleScore = 0; // Maximum possible score
 
-	// Function to shuffle an array (Fisher-Yates algorithm)
+	// Function to shuffle an array
 	function shuffleArray(array) {
 		for (let i = array.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
@@ -16,7 +19,13 @@ function getQuizContent() {
 		}
 	}
 
-	// Function to load a quiz
+	/* 
+		Function to load a quiz quizType: the type of quiz to load
+		formId: the ID of the form element scoreId: the ID of the score element
+		The function fetches the quiz questions from a JSON file and displays them on the page
+		The function also calculates the score of the user and displays it on the page
+		The function also checks if the user has passed the test
+	*/
 	function loadQuiz(quizType, formId, scoreId) {
 		// Fetch quiz questions from the JSON files
 		// amd display them on the page
@@ -52,7 +61,22 @@ function getQuizContent() {
 					quizForm.appendChild(submitButton);
 				}
 
-				// Event listener for form submission
+				/*
+					Event listener for the form submission
+					Check if an option is selected and if it is correct
+					Increment the score and load the next question or finish the quiz if all questions have been answered
+					Display the score and the total score
+					Display a message if the user has passed the test
+					Display a message if the user cannot pass the test
+					Display the final message after all quizzes are completed
+					Hide the submit button after the quiz is completed
+					Display the total score container after the first quiz
+					Display the reset button after all quizzes are completed
+					Display the pass message after all quizzes are completed
+					Display the total score after all quizzes are completed
+					Display the maximum possible score after all quizzes are completed
+					Display the pass message after all quizzes are completed
+				*/
 				quizForm.addEventListener("submit", function (event) {
 					event.preventDefault(); // Prevent the form from submitting
 
@@ -77,6 +101,8 @@ function getQuizContent() {
 					if (currentQuestionIndex < quiz.length) {
 						loadQuestion();
 					} else {
+						// Update the total score and display the score for the current quiz
+						totalScore += score;
 						// Display achieved score in different colors depending on the score
 						if (score === quiz.length) {
 							scoreElement.classList.add("green");
@@ -85,8 +111,6 @@ function getQuizContent() {
 						} else {
 							scoreElement.classList.add("red");
 						}
-						// Update the total score and display the score for the current quiz
-						totalScore += score;
 						scoreElement.textContent = `Your score: ${score} out of ${quiz.length}`; // Display the score
 						quizzesCompleted++; // Increment the number of quizzes completed
 						// Display the total score container after the first quiz
@@ -104,7 +128,7 @@ function getQuizContent() {
 						// However if the user wants he/she can continue anyway
 						if (
 							totalScore + (maxPossibleScore - quiz.length) < passScore &&
-							quizzesCompleted === 1
+							quizzesCompleted === 8
 						) {
 							const failMessage = document.createElement("p"); // Create a paragraph element for the message
 							failMessage.textContent =
@@ -150,7 +174,16 @@ function getQuizContent() {
 			});
 	}
 
-	// Function to reset the quizzes
+	/*
+		Function to reset the quizzes
+		Reset the total score, the number of quizzes completed, and the maximum possible score
+		Clear the total score container and the reset button
+		Clear all forms and scores
+		Load the quizzes
+		Hide the pass message
+		Hide the total score container
+		Clear the total score and the maximum possible score
+	*/
 	function resetQuizzes() {
 		totalScore = 0; // Reset the total score
 		quizzesCompleted = 0; // Reset the number of quizzes completed
