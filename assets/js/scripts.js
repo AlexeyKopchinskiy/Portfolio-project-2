@@ -33,6 +33,13 @@ function getQuizContent() {
 					q.options.forEach((option) => {
 						questionElement.innerHTML += `<input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label><br>`;
 					});
+					quizForm.appendChild(questionElement); // Append the question to the form
+
+					// Create the submit button
+					const submitButton = document.createElement("input");
+					submitButton.type = "submit";
+					submitButton.value = "Submit Answer";
+					quizForm.appendChild(submitButton);
 				}
 
 				// Event listener for form submission
