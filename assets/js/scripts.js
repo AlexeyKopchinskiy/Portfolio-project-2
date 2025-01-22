@@ -89,6 +89,28 @@ function getQuizContent() {
 						document.getElementById("totalScore").textContent = totalScore; // Display the total score
 						document.getElementById("maxScore").textContent = maxPossibleScore; // Display the maximum possible score
 						const passScore = maxPossibleScore - 1; // Set the passing score to be one less than the maximum possible score
+
+						// Display a message if the user cannot pass the test
+						// while completing the quiz
+						// the idea is that if the current score is already too low, it makes no sence to continue
+						// However if the user wants he/she can continue anyway
+						if (
+							totalScore + (maxPossibleScore - quiz.length) < passScore &&
+							quizzesCompleted === 1
+						) {
+							const failMessage = document.createElement("p"); // Create a paragraph element for the message
+							failMessage.textContent =
+								"You will not pass the test even if you finish the rest with the maximum score. However, you may continue if you wish.";
+							failMessage.classList.add("orange"); // Add the orange class to the message
+							quizForm.appendChild(failMessage); // Append the message to the form
+
+							// Create the reset button
+							const tryAgainButton = document.createElement("button"); // Create a button element for the reset button
+							tryAgainButton.textContent = "Try again"; // Set the text content of the button
+							tryAgainButton.classList.add("orange"); // Add the orange class to the button
+							tryAgainButton.addEventListener("click", resetQuizzes); // Add an event listener to the button
+							quizForm.appendChild(tryAgainButton); // Append the button to the form
+						}
 					}
 				});
 
