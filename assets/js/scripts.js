@@ -124,13 +124,21 @@ function getQuizContent() {
 						if (quizzesCompleted === quizzes.length) {
 							document.getElementById("totalScore").classList.add("highlight"); // Highlight the total score
 							document.getElementById("resetButton").classList.remove("hidden"); // Display the reset button
+							document.getElementById("passMessage").classList.remove("hidden"); // Hide the pass message
+							if (score === quiz.length) {
+								passMessage.classList.add("green");
+							} else if (score == quiz.length - 1) {
+								passMessage.classList.add("orange");
+							} else {
+								passMessage.classList.add("red");
+							}
 							// Display the pass message
 							if (totalScore >= passScore) {
 								document.getElementById("passMessage").textContent = "You passed!";
 							} else {
 								document.getElementById(
 									"passMessage"
-								).textContent = `You need at least ${passScore} points to pass.`;
+								).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
 							}
 						}
 						// Hide the submit button after the quiz is completed
@@ -154,6 +162,7 @@ function getQuizContent() {
 		document.getElementById("maxScore").textContent = ""; // Clear the maximum possible score
 		document.getElementById("resetButton").classList.add("hidden"); // Hide the reset button
 		document.getElementById("passMessage").textContent = ""; // Clear the pass message
+		document.getElementById("passMessage").classList.add("hidden"); // Hide the pass message
 		// Clear all forms
 		document.getElementById("biologyForm").innerHTML = ""; // Clear the biology form
 		document.getElementById("astronomyForm").innerHTML = ""; // Clear the astronomy form

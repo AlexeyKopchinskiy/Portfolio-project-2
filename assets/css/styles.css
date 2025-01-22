@@ -146,6 +146,14 @@ nav ul li a {
     height: 100px;
     margin: 10px;
 }
+#passMessage{
+    border: 3px rgb(77, 77, 77) solid;
+    text-align: center;
+    margin: 15px auto;
+    padding: 30px;
+    background-color: var(--highlight-color-2);
+
+}
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 992px) {
@@ -200,7 +208,7 @@ nav ul li a {
 }
 
 .green {
-    color: green;
+    color: rgb(51, 227, 51);
 }
 
 .red {
