@@ -58,6 +58,7 @@ function getQuizContent() {
 					if (selectedOption.value === quiz[currentQuestionIndex].answer) {
 						score++;
 					}
+					currentQuestionIndex++; // Move to the next question
 				});
 			});
 	}
