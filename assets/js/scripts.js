@@ -125,6 +125,8 @@ function getQuizContent() {
 								).textContent = `You need at least ${passScore} points to pass.`;
 							}
 						}
+						// Hide the submit button after the quiz is completed
+						quizForm.querySelector('input[type="submit"]').classList.add("hidden");
 					}
 				});
 
