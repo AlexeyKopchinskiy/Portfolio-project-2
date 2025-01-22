@@ -33,7 +33,9 @@ function getQuizContent() {
 				function loadQuestion() {
 					quizForm.innerHTML = ""; // Clear the form
 					const q = quiz[currentQuestionIndex]; // Get the current question
+
 					shuffleArray(q.options); // Shuffle the questioms so that they disply randomly
+
 					const questionElement = document.createElement("div"); // Create a div element for the question
 					questionElement.innerHTML = `<label>${q.question}</label><br>`; // Display current question
 
@@ -53,6 +55,7 @@ function getQuizContent() {
 				// Event listener for form submission
 				quizForm.addEventListener("submit", function (event) {
 					event.preventDefault(); // Prevent the form from submitting
+
 					// Check if an option is selected
 					const selectedOption = document.querySelector(
 						`input[name="${quizType}Question${currentQuestionIndex}"]:checked`
@@ -61,6 +64,7 @@ function getQuizContent() {
 						alert("Please select an answer!");
 						return;
 					}
+
 					// Check if the selected option is correct
 					// and increment the score if it is
 					if (selectedOption.value === quiz[currentQuestionIndex].answer) {
@@ -75,10 +79,20 @@ function getQuizContent() {
 					} else {
 						// Update the total score and display the score for the current quiz
 						totalScore += score;
-					}
+						scoreElement.textContent = `Your score: ${score}`; // Display the score
+						quizzesCompleted++; // Increment the number of quizzes completed
+						// Display the total score container after the first quiz
+						if (quizzesCompleted === 1) {
+							document.getElementById("totalScoreContainer").classList.remove("hidden");
+						}
 
-					loadQuestion(); // Load the next question
+						document.getElementById("totalScore").textContent = totalScore; // Display the total score
+						document.getElementById("maxScore").textContent = maxPossibleScore; // Display the maximum possible score
+						const passScore = maxPossibleScore - 1; // Set the passing score to be one less than the maximum possible score
+					}
 				});
+
+				loadQuestion(); // Load the next question
 			});
 	}
 
@@ -93,7 +107,7 @@ function getQuizContent() {
 // But first check whether loading has been completed
 if (document.readyState === "loading") {
 	// Loading isn't finished
-	document.addEventListener("DOMContentLoaded", getQuizContent);
+	document.addEventListener("DOMContentLoaded", getQuizContent());
 } else {
 	// `DOMContentLoaded` has been fired
 	getQuizContent();
