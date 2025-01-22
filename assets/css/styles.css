@@ -60,6 +60,10 @@ A{
 A:hover{
     color: var(--link-color);
 }
+/* label{
+    color: var(--highlight-color-light);
+    margin: 15px;
+} */
 /* End of Global styles */
 
 /* Page structure Styles */
@@ -151,8 +155,18 @@ nav ul li a {
     text-align: center;
     margin: 15px auto;
     padding: 30px;
-    background-color: var(--highlight-color-2);
-
+    background-color: white;
+    font-weight: bold;
+}
+#resetButton{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Media queries for responsiveness */
@@ -200,6 +214,7 @@ nav ul li a {
 
 .hidden {
     display: none;
+    visibility: hidden;
 }
 
 .highlight {

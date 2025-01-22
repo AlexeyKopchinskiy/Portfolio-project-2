@@ -37,7 +37,7 @@ function getQuizContent() {
 					shuffleArray(q.options); // Shuffle the questioms so that they disply randomly
 
 					const questionElement = document.createElement("div"); // Create a div element for the question
-					questionElement.innerHTML = `<label>${q.question}</label><br>`; // Display current question
+					questionElement.innerHTML = `<h4>${q.question}</h4>`; // Display current question
 
 					// Create radio buttons for each option from the aray of questions
 					q.options.forEach((option) => {
