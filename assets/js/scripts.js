@@ -116,6 +116,14 @@ function getQuizContent() {
 						if (quizzesCompleted === quizzes.length) {
 							document.getElementById("totalScore").classList.add("highlight"); // Highlight the total score
 							document.getElementById("resetButton").classList.remove("hidden"); // Display the reset button
+							// Display the pass message
+							if (totalScore >= passScore) {
+								document.getElementById("passMessage").textContent = "You passed!";
+							} else {
+								document.getElementById(
+									"passMessage"
+								).textContent = `You need at least ${passScore} points to pass.`;
+							}
 						}
 					}
 				});
