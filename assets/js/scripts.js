@@ -134,6 +134,35 @@ function getQuizContent() {
 			});
 	}
 
+	// Function to reset the quizzes
+	function resetQuizzes() {
+		totalScore = 0; // Reset the total score
+		quizzesCompleted = 0; // Reset the number of quizzes completed
+		maxPossibleScore = 0; // Reset the maximum possible score
+		// Clear the total score container and the reset button
+		document.getElementById("totalScoreContainer").classList.add("hidden"); // Hide the total score container
+		document.getElementById("totalScore").textContent = ""; // Clear the total score
+		document.getElementById("totalScore").classList.remove("highlight"); // Remove the highlight from the total score
+		document.getElementById("maxScore").textContent = ""; // Clear the maximum possible score
+		document.getElementById("resetButton").classList.add("hidden"); // Hide the reset button
+		document.getElementById("passMessage").textContent = ""; // Clear the pass message
+		// Clear all forms
+		document.getElementById("biologyForm").innerHTML = ""; // Clear the biology form
+		document.getElementById("astronomyForm").innerHTML = ""; // Clear the astronomy form
+		document.getElementById("geographyForm").innerHTML = ""; // Clear the geography form
+		document.getElementById("historyForm").innerHTML = ""; // Clear the history form
+		// Clear all scores
+		document.getElementById("biologyScore").textContent = ""; // Clear the biology score
+		document.getElementById("astronomyScore").textContent = ""; // Clear the astronomy score
+		document.getElementById("geographyScore").textContent = ""; // Clear the geography score
+		document.getElementById("historyyScore").textContent = ""; // Clear the history score
+		// Load quizzes
+		loadQuiz("biology", "biologyForm", "biologyScore");
+		loadQuiz("astronomy", "astronomyForm", "astronomyScore");
+		loadQuiz("geography", "geographyForm", "geographyScore");
+		loadQuiz("history", "historyForm", "historyScore");
+	}
+
 	// Load quizzes
 	loadQuiz("biology", "biologyForm", "biologyScore");
 	loadQuiz("astronomy", "astronomyForm", "astronomyScore");
