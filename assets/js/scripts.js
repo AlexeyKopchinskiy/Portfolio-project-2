@@ -53,6 +53,11 @@ function getQuizContent() {
 						alert("Please select an answer!");
 						return;
 					}
+					// Check if the selected option is correct
+					// and increment the score if it is
+					if (selectedOption.value === quiz[currentQuestionIndex].answer) {
+						score++;
+					}
 				});
 			});
 	}
