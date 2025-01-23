@@ -13,6 +13,8 @@ The website features four quizzes with topics targeting knowledge in biology, as
 
 ### Main Page
 
+![Main mape snapshot](assets/images/readme/Responsive-snapshot.png)
+
 The main page of the Quiz website contains the following sections:
 - **Biology Quiz**: Questions related to biological concepts and facts.
 - **Astronomy Quiz**: Questions related to astronomical phenomena and facts.
