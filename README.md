@@ -13,7 +13,7 @@ The website features four quizzes with topics targeting knowledge in biology, as
 
 ### Main Page
 
-![Main mape snapshot](assets/images/readme/Responsive-snapshot.png)
+![Main mape snapshot](assets/images/readme/Quiz-portal-snapshot1.jpg)
 
 The main page of the Quiz website contains the following sections:
 - **Biology Quiz**: Questions related to biological concepts and facts.
@@ -60,3 +60,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Thanks to [Code Institute](https://codeinstitute.net/) for providing the project guidelines.
 - Special thanks to the contributors of Bootstrap, Font Awesome, and Google Fonts for their amazing tools and resources.
+- Thanks https://ui.dev/amiresponsive for generating snaphot of the website layouts.
