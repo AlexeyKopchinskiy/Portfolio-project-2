@@ -4,6 +4,14 @@ let totalScore = 0; // Total score of the user
 let quizzesCompleted = 0; // Number of quizzes completed
 let maxPossibleScore = 0; // Maximum possible score
 
+// Function to shuffle an array
+function shuffleArray(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+}
+
 /*
 	The getQuizContent() is the main function that gets the quiz content from the forms on the page.
 	It displays the quiz score and the total score of the user.
@@ -11,14 +19,6 @@ let maxPossibleScore = 0; // Maximum possible score
 	The function also allows the user to reset the quizzes and start again.
 */
 function getQuizContent() {
-	// Function to shuffle an array
-	function shuffleArray(array) {
-		for (let i = array.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[array[i], array[j]] = [array[j], array[i]];
-		}
-	}
-
 	/* 
 		Function to load a quiz quizType: the type of quiz to load
 		formId: the ID of the form element scoreId: the ID of the score element
