@@ -122,28 +122,6 @@ function getQuizContent() {
 						document.getElementById("maxScore").textContent = maxPossibleScore; // Display the maximum possible score
 						const passScore = maxPossibleScore - 1; // Set the passing score to be one less than the maximum possible score
 
-						// Display a message if the user cannot pass the test
-						// while completing the quiz
-						// the idea is that if the current score is already too low, it makes no sence to continue
-						// However if the user wants he/she can continue anyway
-						if (
-							totalScore + (maxPossibleScore - quiz.length) < passScore &&
-							quizzesCompleted === 8
-						) {
-							const failMessage = document.createElement("p"); // Create a paragraph element for the message
-							failMessage.textContent =
-								"You will not pass the test even if you finish the rest with the maximum score. However, you may continue if you wish.";
-							failMessage.classList.add("orange"); // Add the orange class to the message
-							quizForm.appendChild(failMessage); // Append the message to the form
-
-							// Create the reset button
-							const tryAgainButton = document.createElement("button"); // Create a button element for the reset button
-							tryAgainButton.textContent = "Try again"; // Set the text content of the button
-							tryAgainButton.classList.add("orange"); // Add the orange class to the button
-							tryAgainButton.addEventListener("click", resetQuizzes); // Add an event listener to the button
-							quizForm.appendChild(tryAgainButton); // Append the button to the form
-						}
-
 						// Display the final message after all quizzes are completed
 						if (quizzesCompleted === quizzes.length) {
 							document.getElementById("totalScore").classList.add("highlight"); // Highlight the total score
@@ -172,45 +150,6 @@ function getQuizContent() {
 
 				loadQuestion(); // Load the next question
 			});
-	}
-
-	/*
-		Function to reset the quizzes
-		Reset the total score, the number of quizzes completed, and the maximum possible score
-		Clear the total score container and the reset button
-		Clear all forms and scores
-		Load the quizzes
-		Hide the pass message
-		Hide the total score container
-		Clear the total score and the maximum possible score
-	*/
-	function resetQuizzes() {
-		totalScore = 0; // Reset the total score
-		quizzesCompleted = 0; // Reset the number of quizzes completed
-		maxPossibleScore = 0; // Reset the maximum possible score
-		// Clear the total score container and the reset button
-		document.getElementById("totalScoreContainer").classList.add("hidden"); // Hide the total score container
-		document.getElementById("totalScore").textContent = ""; // Clear the total score
-		document.getElementById("totalScore").classList.remove("highlight"); // Remove the highlight from the total score
-		document.getElementById("maxScore").textContent = ""; // Clear the maximum possible score
-		document.getElementById("resetButton").classList.add("hidden"); // Hide the reset button
-		document.getElementById("passMessage").textContent = ""; // Clear the pass message
-		document.getElementById("passMessage").classList.add("hidden"); // Hide the pass message
-		// Clear all forms
-		document.getElementById("biologyForm").innerHTML = ""; // Clear the biology form
-		document.getElementById("astronomyForm").innerHTML = ""; // Clear the astronomy form
-		document.getElementById("geographyForm").innerHTML = ""; // Clear the geography form
-		document.getElementById("historyForm").innerHTML = ""; // Clear the history form
-		// Clear all scores
-		document.getElementById("biologyScore").textContent = ""; // Clear the biology score
-		document.getElementById("astronomyScore").textContent = ""; // Clear the astronomy score
-		document.getElementById("geographyScore").textContent = ""; // Clear the geography score
-		document.getElementById("historyScore").textContent = ""; // Clear the history score
-		// Load quizzes
-		loadQuiz("biology", "biologyForm", "biologyScore");
-		loadQuiz("astronomy", "astronomyForm", "astronomyScore");
-		loadQuiz("geography", "geographyForm", "geographyScore");
-		loadQuiz("history", "historyForm", "historyScore");
 	}
 
 	// Load quizzes
