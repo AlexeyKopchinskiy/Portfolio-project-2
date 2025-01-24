@@ -27,7 +27,8 @@ body {
 }
 h1{
     color: var(--highlight-color-light);
-    margin: 20px;
+    margin: 40px 20px;
+    font-size: 1.5em;
 }
 h3 {
     font-family: var(--secondary-font);
@@ -67,28 +68,23 @@ A:hover{
 /* End of Global styles */
 
 /* Page structure Styles */
-
-header {
+nav{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-}
-
-.logo img {
-    height: 50px;
+    background-color: var(--highlight-color-2);
 }
 
 nav ul {
+    align-self: center;
     list-style: none;
-    margin: 0;
+    margin: 0 15px;
     padding: 0;
     display: flex;
 }
 
-nav ul li {
+nav li {
     margin-left: 20px;
 }
 
@@ -97,6 +93,15 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+
+figure {
+    margin: 15px;
+    padding: 0;
+}
+figure img {
+    height: 50px;
+}
+
 
 .quiz-container {
     /* width: 90%; */
