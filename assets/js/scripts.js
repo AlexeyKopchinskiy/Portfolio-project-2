@@ -1,3 +1,9 @@
+// Set list of quiz types and initial score variables
+const quizzes = ["biology", "astronomy", "geography", "history"]; // List of quiz types
+let totalScore = 0; // Total score of the user
+let quizzesCompleted = 0; // Number of quizzes completed
+let maxPossibleScore = 0; // Maximum possible score
+
 /*
 	The getQuizContent() is the main function that gets the quiz content from the forms on the page.
 	It displays the quiz score and the total score of the user.
@@ -5,12 +11,6 @@
 	The function also allows the user to reset the quizzes and start again.
 */
 function getQuizContent() {
-	// Set list of quiz types and initial score variables
-	const quizzes = ["biology", "astronomy", "geography", "history"]; // List of quiz types
-	let totalScore = 0; // Total score of the user
-	let quizzesCompleted = 0; // Number of quizzes completed
-	let maxPossibleScore = 0; // Maximum possible score
-
 	// Function to shuffle an array
 	function shuffleArray(array) {
 		for (let i = array.length - 1; i > 0; i--) {
