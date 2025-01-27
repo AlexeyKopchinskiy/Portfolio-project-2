@@ -6,23 +6,24 @@ let maxPossibleScore = 0; // Maximum possible score
 
 // Function to display the next question
 function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
-    quizForm.innerHTML = ""; // Clear the form
-    const q = quiz[currentQuestionIndex]; // Get the current question
+	quizForm.innerHTML = ""; // Clear the form
+	const q = quiz[currentQuestionIndex]; // Get the current question
 
-    const questionElement = document.createElement("div"); // Create a div element for the question
-    questionElement.innerHTML = `<h4>${q.question}</h4>`; // Display current question
+	const questionElement = document.createElement("ul"); // Create a section element for the set of question
+	questionElement.innerHTML = `<h4>${q.question}</h4>`; // Display current question
+	// const questionElement = document.createElement("ul"); // Create a list element for the amswers
 
-    // Create radio buttons for each option from the array of questions
-    q.options.forEach((option) => {
-        questionElement.innerHTML += `<input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label><br>`;
-    });
-    quizForm.appendChild(questionElement); // Append the question to the form
+	// Create radio buttons for each option from the array of questions
+	q.options.forEach((option) => {
+		questionElement.innerHTML += `<input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label><br>`;
+	});
+	quizForm.appendChild(questionElement); // Append the question to the form
 
-    // Create the submit button
-    const submitButton = document.createElement("input");
-    submitButton.type = "submit";
-    submitButton.value = "Submit Answer";
-    quizForm.appendChild(submitButton);
+	// Create the submit button
+	const submitButton = document.createElement("input");
+	submitButton.type = "submit";
+	submitButton.value = "Submit Answer";
+	quizForm.appendChild(submitButton);
 }
 
 /* 
