@@ -4,26 +4,18 @@ let totalScore = 0; // Total score of the user
 let quizzesCompleted = 0; // Number of quizzes completed
 let maxPossibleScore = 0; // Maximum possible score
 
-// Function to display the next question
-function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
-	quizForm.innerHTML = ""; // Clear the form
-	const q = quiz[currentQuestionIndex]; // Get the current question
-
-	const questionElement = document.createElement("ul"); // Create a section element for the set of question
-	questionElement.innerHTML = `<h4>${q.question}</h4>`; // Display current question
-	// const questionElement = document.createElement("ul"); // Create a list element for the amswers
-
-	// Create radio buttons for each option from the array of questions
-	q.options.forEach((option) => {
-		questionElement.innerHTML += `<input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label><br>`;
-	});
-	quizForm.appendChild(questionElement); // Append the question to the form
-
-	// Create the submit button
-	const submitButton = document.createElement("input");
-	submitButton.type = "submit";
-	submitButton.value = "Submit Answer";
-	quizForm.appendChild(submitButton);
+/*
+    The getQuizContent() is the main function that gets the quiz content from the forms on the page.
+    It displays the quiz score and the total score of the user.
+    The function also checks if the user has passed the test and displays a message accordingly.
+    The function also allows the user to reset the quizzes and start again.
+*/
+function getQuizContent() {
+    // Load quizzes
+    loadQuiz("biology", "biologyForm", "biologyScore");
+    loadQuiz("astronomy", "astronomyForm", "astronomyScore");
+    loadQuiz("geography", "geographyForm", "geographyScore");
+    loadQuiz("history", "historyForm", "historyScore");
 }
 
 /* 
@@ -136,19 +128,55 @@ function loadQuiz(quizType, formId, scoreId) {
         });
 }
 
-/*
-    The getQuizContent() is the main function that gets the quiz content from the forms on the page.
-    It displays the quiz score and the total score of the user.
-    The function also checks if the user has passed the test and displays a message accordingly.
-    The function also allows the user to reset the quizzes and start again.
-*/
-function getQuizContent() {
-    // Load quizzes
-    loadQuiz("biology", "biologyForm", "biologyScore");
-    loadQuiz("astronomy", "astronomyForm", "astronomyScore");
-    loadQuiz("geography", "geographyForm", "geographyScore");
-    loadQuiz("history", "historyForm", "historyScore");
+// Function to display the next question
+function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
+	quizForm.innerHTML = ""; // Clear the form
+	const q = quiz[currentQuestionIndex]; // Get the current question
+
+	const questionElement = document.createElement("ul"); // Create a section element for the set of question
+	questionElement.innerHTML = `<h4>${q.question}</h4>`; // Display current question
+	// const questionElement = document.createElement("ul"); // Create a list element for the amswers
+
+	// Create radio buttons for each option from the array of questions
+	q.options.forEach((option) => {
+		questionElement.innerHTML += `<input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label><br>`;
+	});
+	quizForm.appendChild(questionElement); // Append the question to the form
+
+	// Create the submit button
+	const submitButton = document.createElement("input");
+	submitButton.type = "submit";
+	submitButton.value = "Submit Answer";
+	quizForm.appendChild(submitButton);
 }
+
+// Function to start the countdown timer
+function startCountdown() {
+    const countdownElement = document.getElementById('countdown');
+    const timeElement = document.getElementById('time');
+    let timeLeft = 60; // 60 seconds countdown
+
+    countdownElement.classList.remove('hidden');
+
+    timer = setInterval(() => {
+        timeLeft--;
+        timeElement.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            document.getElementById('quizContainer').classList.add('hidden');
+            alert('Time is up! The quiz has ended.');
+        }
+    }, 1000);
+}
+
+// Function to stop the countdown timer
+function stopCountdown() {
+    clearInterval(timer);
+    // alert('Countdown stopped.');
+}
+
+
 
 // Add event listener to the button to load the script and start the quiz
 document.getElementById('loadScriptButton').addEventListener('click', function() {
