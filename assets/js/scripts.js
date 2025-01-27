@@ -150,12 +150,8 @@ function getQuizContent() {
     loadQuiz("history", "historyForm", "historyScore");
 }
 
-// Event to initiate the quiz when the page loads
-// But first check whether loading has been completed
-if (document.readyState === "loading") {
-    // Loading isn't finished
-    document.addEventListener("DOMContentLoaded", getQuizContent());
-} else {
-    // `DOMContentLoaded` has been fired
+// Add event listener to the button to load the script and start the quiz
+document.getElementById('loadScriptButton').addEventListener('click', function() {
+    document.getElementById('quizContainer').classList.remove('hidden');
     getQuizContent();
-}
+});
