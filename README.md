@@ -5,7 +5,7 @@ JavaScript Essentials - based project
 
 The goal of the website is to test the user's understanding of basic facts related to our world. It has several user-friendly quizzes dedicated to different topics. Each quiz will assign a score for the knowledge in this particular area. After all quizzes are completed, the overall score is displayed, and the pass is granted if the minimum score is reached.
 
-![Preview of the responsive design](assets/images/readme/Responsive-snapshot.png)
+![Preview of the responsive design](assets/images/readme/responsive-snapshot.png)
 
 ## Website Features
 
@@ -13,7 +13,7 @@ The website features four quizzes with topics targeting knowledge in biology, as
 
 ### Main Page
 
-![Main mape snapshot](assets/images/readme/Quiz-portal-snapshot1.jpg)
+![Main mape snapshot](assets/images/readme/quiz-portal-snapshot1.jpg)
 
 The main page of the Quiz website contains the following sections:
 - **Biology Quiz**: Questions related to biological concepts and facts.
