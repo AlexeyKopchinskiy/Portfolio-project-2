@@ -13,6 +13,7 @@
     --highlight-color-2: #54677a; /* light slate gray */
     --highlight-color-light: #b6c2ce; /* light cream */
     --link-color:#336699;
+    --alert-color:#ed7d0d;
     box-sizing: border-box;
 }
 /* Global styles */
@@ -64,6 +65,12 @@ label{
     font-size: 1rem;
 }
 /* End of Global styles */
+
+/* Simple css styles */
+.centered {
+    text-align: center;
+}
+/* End of simple css styles */
 
 /* Page structure Styles */
 nav{
@@ -160,6 +167,25 @@ figure img {
     height: 100px;
     margin: 10px;
 }
+#quizButton{
+    display: block;
+    margin: 20px auto;
+    padding: 20px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+#quizButton button{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
 #passMessage{
     border: 3px rgb(77, 77, 77) solid;
     text-align: center;
@@ -177,6 +203,11 @@ figure img {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+#countdown{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--alert-color);
 }
 
 /* Media queries for responsiveness */

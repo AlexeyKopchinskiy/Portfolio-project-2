@@ -156,32 +156,37 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 
 // Function to start the countdown timer
 function startCountdown() {
-    const countdownElement = document.getElementById('countdown');
-    const timeElement = document.getElementById('time');
-    let timeLeft = 60; // 60 seconds countdown
+	const countdownElement = document.getElementById("countdown");
+	const timeElement = document.getElementById("time");
+	let timeLeft = 60; // 60 seconds countdown
 
-    countdownElement.classList.remove('hidden');
+	countdownElement.classList.remove("hidden");
 
-    timer = setInterval(() => {
-        timeLeft--;
-        timeElement.textContent = timeLeft;
+	timer = setInterval(() => {
+		timeLeft--;
+		timeElement.textContent = timeLeft;
 
-        if (timeLeft <= 0) {
-            clearInterval(timer);
-            document.getElementById('quizContainer').classList.add('hidden');
-            alert('Time is up! The quiz has ended.');
-        }
-    }, 1000);
+		if (timeLeft <= 0) {
+			clearInterval(timer);
+			document.getElementById("quizContainer").classList.add("hidden");
+			alert("Time is up! The quiz has ended.");
+			document.getElementById("comments").classList.remove("hidden"); // Hide the comments
+			document.getElementById("quizButton").classList.remove("hidden"); // Hide the quiz button
+			document.getElementById("countdown").classList.add("hidden"); // Hide the quiz button
+		}
+	}, 1000);
 }
 
 // Function to stop the countdown timer
 function stopCountdown() {
-    clearInterval(timer);
-    // alert('Countdown stopped.');
+	clearInterval(timer);
+	// alert('Countdown stopped.');
 }
 
 // Add event listener to the button to load the script and start the quiz
-document.getElementById('loadScriptButton').addEventListener('click', function() {
-    document.getElementById('quizContainer').classList.remove('hidden');
-    getQuizContent();
+document.getElementById("loadScriptButton").addEventListener("click", function () {
+	document.getElementById("quizContainer").classList.remove("hidden");
+	document.getElementById("comments").classList.add("hidden"); // Hide the comments
+	document.getElementById("quizButton").classList.add("hidden"); // Hide the quiz button
+	getQuizContent();
 });
