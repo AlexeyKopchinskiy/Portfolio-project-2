@@ -15,45 +15,36 @@
 			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 			crossorigin="anonymous"
 		/>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-			crossorigin="anonymous"
-		></script>
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="assets/css/styles.css" />
-		<!-- Font Awesone -->
-		<script
-			rel="preconnect"
-			src="https://kit.fontawesome.com/83f5109055.js"
-			crossorigin="anonymous"
-		></script>
+		<!-- Font Awesome -->
+		<script src="https://kit.fontawesome.com/83f5109055.js" crossorigin="anonymous"></script>
 		<!-- Favicon generated with favicon.cc -->
 		<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
 		<!-- Embed Google Domine font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
 	<body>
 		<header>
-			<div class="logo">
-				<a href="index.html"><img src="assets/images/logo.png" alt="Quiz Portal Logo" /></a>
-			</div>
 			<nav>
+				<figure>
+					<a href="index.html"><img src="assets/images/logo.png" alt="Quiz Portal Logo" /></a>
+				</figure>
 				<ul>
-					<li><i class="fa-solid fa-house-laptop"></i> <a href="index.html"> Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About Us</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
-		<h1>About General Knowledge Quiz Portal</h1>
-		<div class="quiz-container">
-			<div class="quiz-section-generic">
+		<main>
+			<h1>About General Knowledge Quiz Portal</h1>
+			<section class="quiz-section-generic">
 				<p>Welcome to Quiz Portal!</p>
 				<p>
 					At Quiz Portal, we believe that learning should be fun, engaging, and accessible to
@@ -106,13 +97,12 @@
 					Join our community today and start your journey of fun and interactive learning. Sign up
 					now and take your first quiz!
 				</p>
-			</div>
-		</div>
-		<h2 id="totalScoreContainer" class="hidden">
-			Your total score is <span id="totalScore" class="green"></span> out of
-			<span id="maxScore" class="red"></span>
-		</h2>
-		<p id="passMessage" class="hidden"></p>
-		<button id="resetButton" class="hidden" onClick="window.location.reload();">Reset</button>
+			</section>
+		</main>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>

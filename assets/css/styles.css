@@ -20,9 +20,7 @@
 body {
     font-family: var(--primary-font);
     color: #e0e0e0; 
-    /* min-height: 100vh; */
-    /* display: flex; */
-    /* flex-direction: column; */
+    min-height: 100vh;
     background-color: var(--shade-color);
 }
 h1{
@@ -32,8 +30,9 @@ h1{
 }
 h3 {
     font-family: var(--secondary-font);
-    color: var(--highlight-color);
+    color: var(--highlight-color-light);
     text-align: center;
+    margin: 35px 20px 20px 20px;
 }
 h4 {
     color: var(--highlight-color-light);
@@ -53,16 +52,20 @@ h2 {
 h6{
     font-size: smaller;
 }
+
 A{
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--highlight-color-light);
 }
 A:hover{
-    color: var(--link-color);
+    color: var(--alert-color);
 }
 label{
     color: var(--highlight-color-light);
     font-size: 1rem;
+}
+ul{
+    list-style: none;
 }
 /* End of Global styles */
 
@@ -98,6 +101,9 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+nav a:hover{
+    color: var(--alert-color);
+}
 
 figure {
     margin: 15px;
@@ -106,7 +112,15 @@ figure {
 figure img {
     height: 50px;
 }
-
+main{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content:space-around;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+}
 
 .quiz-container {
     display: flex;
@@ -130,17 +144,17 @@ figure img {
     box-sizing: border-box;
 }
 .quiz-section-generic {
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    padding: 20px;
-    width: 60%;
-    background-color: var(--tertiary-color);
-    margin: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
+    align-self: center;
     flex-direction: column;
     justify-content: stretch;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 20px;
+    width: 98%;
+    background-color: var(--highlight-color-2);
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .quiz-section ul.no-bullets {
@@ -191,14 +205,14 @@ figure img {
     text-align: center;
     margin: 15px auto;
     padding: 30px;
-    background-color: white;
+    background-color: var(--highlight-color-2);
     font-weight: bold;
 }
-#resetButton{
+.roloadPageButton{
     display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #333;
+    margin: 10px auto;
+    padding: 5px 10px;
+    background-color: var(--tertiary-color);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -251,6 +265,9 @@ figure img {
     input{
         font-size: 3vw;
     }
+    p{
+        font-size:10px;
+    }
 }
 
 .hidden {
@@ -274,4 +291,13 @@ figure img {
 .orange {
     color: orange;
     font-weight: bold;
+}
+
+.blue {
+    color: blue;
+    font-weight: bold;
+}
+
+.gunMetal {
+    color: #605598
 }

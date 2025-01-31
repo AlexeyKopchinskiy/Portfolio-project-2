@@ -1,7 +1,7 @@
 [
 	{
 		"question": "Which planet is known as the Red Planet?",
-		"options": ["Mars", "Venus", "Jupiter", "Saturn"],
+		"options": ["Venus", "Mars", "Jupiter", "Saturn"],
 		"answer": "Mars"
 	},
 	{
@@ -11,7 +11,7 @@
 	},
 	{
 		"question": "What is the name of our galaxy?",
-		"options": ["Milky Way", "Andromeda", "Triangulum", "Whirlpool"],
+		"options": ["Andromeda", "Triangulum", "Milky Way", "Whirlpool"],
 		"answer": "Milky Way"
 	}
 ]

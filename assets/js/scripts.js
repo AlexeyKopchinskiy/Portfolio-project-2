@@ -12,6 +12,10 @@ let timer; // Timer for the countdown
     The function also allows the user to reset the quizzes and start again.
 */
 function getQuizContent() {
+	document.getElementById("quizContainer").classList.remove("hidden");
+	document.getElementById("comments").classList.add("hidden");
+	document.getElementById("quizButton").classList.add("hidden");
+	document.getElementById("reloadButton").classList.remove("hidden");
 	// Load quizzes
 	loadQuiz("biology", "biologyForm", "biologyScore");
 	loadQuiz("astronomy", "astronomyForm", "astronomyScore");
@@ -57,7 +61,7 @@ function loadQuiz(quizType, formId, scoreId) {
             */
 			quizForm.addEventListener("submit", function (event) {
 				event.preventDefault(); // Prevent the form from submitting
-
+				// document.getElementById("reloadButton").classList.add("hidden"); // Hides the quiz button
 				// Check if an option is selected
 				const selectedOption = document.querySelector(
 					`input[name="${quizType}Question${currentQuestionIndex}"]:checked`
@@ -85,7 +89,7 @@ function loadQuiz(quizType, formId, scoreId) {
 					if (score === quiz.length) {
 						scoreElement.classList.add("green");
 					} else if (score == quiz.length - 1) {
-						scoreElement.classList.add("orange");
+						scoreElement.classList.add("blue");
 					} else {
 						scoreElement.classList.add("red");
 					}
@@ -103,15 +107,16 @@ function loadQuiz(quizType, formId, scoreId) {
 					// Display the final message after all quizzes are completed
 					if (quizzesCompleted === quizzes.length) {
 						document.getElementById("totalScore").classList.add("highlight"); // Highlight the total score
-						document.getElementById("resetButton").classList.remove("hidden"); // Display the reset button
-						document.getElementById("passMessage").classList.remove("hidden"); // Hide the pass message
+						document.getElementById("passMessage").classList.remove("hidden"); // Show the pass message
+
 						if (score === quiz.length) {
 							passMessage.classList.add("green");
 						} else if (score == quiz.length - 1) {
-							passMessage.classList.add("orange");
+							passMessage.classList.add("blue");
 						} else {
-							passMessage.classList.add("red");
+							passMessage.classList.add("orange");
 						}
+
 						// Display the pass message
 						if (totalScore >= passScore) {
 							document.getElementById("passMessage").textContent = "You passed!";
@@ -143,7 +148,7 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 
 	// Create radio buttons for each option from the array of questions
 	q.options.forEach((option) => {
-		questionElement.innerHTML += `<input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label><br>`;
+		questionElement.innerHTML += `<li><input type="radio" id="${quizType}Question${currentQuestionIndex}${option}" name="${quizType}Question${currentQuestionIndex}" value="${option}"> <label for="${quizType}Question${currentQuestionIndex}${option}">${option}</label></li>`;
 	});
 	quizForm.appendChild(questionElement); // Append the question to the form
 
@@ -169,10 +174,11 @@ function startCountdown() {
 		if (timeLeft <= 0) {
 			clearInterval(timer);
 			document.getElementById("quizContainer").classList.add("hidden");
-			alert("Time is up! The quiz has ended.");
+			alert("Time is up! Sorrry, The quiz has ended. Let's try again!");
 			document.getElementById("comments").classList.remove("hidden"); // Hide the comments
 			document.getElementById("quizButton").classList.remove("hidden"); // Hide the quiz button
 			document.getElementById("countdown").classList.add("hidden"); // Hide the quiz button
+			resetQuiz();
 		}
 	}, 1000);
 }
@@ -180,13 +186,8 @@ function startCountdown() {
 // Function to stop the countdown timer
 function stopCountdown() {
 	clearInterval(timer);
-	// alert('Countdown stopped.');
 }
 
-// Add event listener to the button to load the script and start the quiz
-document.getElementById("loadScriptButton").addEventListener("click", function () {
-	document.getElementById("quizContainer").classList.remove("hidden");
-	document.getElementById("comments").classList.add("hidden"); // Hide the comments
-	document.getElementById("quizButton").classList.add("hidden"); // Hide the quiz button
-	getQuizContent();
-});
+function resetQuiz() {
+	location.reload();
+}
