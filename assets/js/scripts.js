@@ -113,13 +113,21 @@ function loadQuiz(quizType, formId, scoreId) {
 						changeColor(score, quiz.length, scoreElement);
 
 						// Display the pass message
-						if (totalScore >= passScore) {
-							document.getElementById("passMessage").textContent = "You passed!";
+						if (totalScore === maxPossibleScore) {
+							document.getElementById("passMessage").textContent =
+								"You passed with the highest score! Congratulations!!!";
+							document.getElementById("passMessage").classList.add("green");
+							stopCountdown();
+						} else if (totalScore == --maxPossibleScore) {
+							document.getElementById("passMessage").textContent =
+								"You passed through the skin of your teeth... WoW!";
+							document.getElementById("passMessage").classList.add("orange");
 							stopCountdown();
 						} else {
 							document.getElementById(
 								"passMessage"
 							).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
+							document.getElementById("passMessage").classList.add("red");
 							stopCountdown();
 						}
 					}
@@ -163,7 +171,7 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 	// Create the submit button
 	const submitButton = document.createElement("input");
 	submitButton.type = "submit";
-	submitButton.value = "Submit Answer";
+	submitButton.value = `Check your ${quizType}`;
 	quizForm.appendChild(submitButton);
 }
 
