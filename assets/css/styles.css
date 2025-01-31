@@ -213,20 +213,26 @@ main{
     background-color: var(--highlight-color-2);
     font-weight: bold;
 }
+
+#countdown{
+    text-align: center;
+    font-size: 1.5vw;
+    color: var(--alert-color);
+}
+/* Styles for section with reset button */
+#reset{
+    text-align: center;
+}
 .roloadPageButton{
-    display: block;
+    /* display: block; */
     margin: 10px auto;
-    padding: 5px 10px;
+    padding: 5px 30px;
     background-color: var(--tertiary-color);
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-#countdown{
-    text-align: center;
-    font-size: 1.5vw;
-    color: var(--alert-color);
+    height: 50px;
 }
 
 /* Media queries for responsiveness */
