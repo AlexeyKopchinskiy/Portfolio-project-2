@@ -37,6 +37,7 @@ h3 {
 h4 {
     color: var(--highlight-color-light);
     padding-bottom:  20px;
+    font-size: 1.4vw;
 }
 
 h1,
@@ -224,7 +225,6 @@ main{
     text-align: center;
 }
 .roloadPageButton{
-    /* display: block; */
     margin: 10px auto;
     padding: 5px 30px;
     background-color: var(--tertiary-color);
@@ -274,7 +274,7 @@ main{
         font-size: 4vw;
     }
     h4{
-        font-size: 4vw;
+        font-size: 3vw;
     }
     li{
         font-size: 3vw;
