@@ -23,9 +23,13 @@ The main page of the Quiz website contains the following sections:
 
 ### About Us Page
 
+![About us page](assets/images/readme/quiz-portal-about-page.jpg)
+
 The About Us page provides information about the Quiz Portal, its mission, and its vision. It also includes details about the diverse quiz categories, interactive learning features, and the ability to challenge friends.
 
 ### Contact Page
+
+![Contact page](assets/images/readme/quiz-portal-contact-page.jpg)
 
 The Contact page provides information on how to get in touch with the Quiz Portal team. It includes contact details such as email, phone number, office hours, and social media links.
 
