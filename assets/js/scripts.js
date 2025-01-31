@@ -175,7 +175,7 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 	// Create the submit button
 	const submitButton = document.createElement("input");
 	submitButton.type = "submit";
-	submitButton.value = "Submit Answer";
+	submitButton.value = `Check your ${quizType}`; // Personalize the submit button
 	quizForm.appendChild(submitButton);
 }
 
