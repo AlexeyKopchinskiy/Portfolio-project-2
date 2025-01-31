@@ -44,7 +44,8 @@
 		</header>
 		<main>
 			<section id="welcome">
-				<h1>Welcome to the General Knowledge Quiz Portal!</h1>
+				<h1>Welcome to the Quiz Portal!</h1>
+				<h3>we will test your general knowledge here</h3>
 				<p id="comments" class="centered">
 					The quiz will have four topics, three questions each and last 60 seconds.<br> Click the button
 					below when ready!
@@ -61,6 +62,7 @@
 			</section>
 			
 			<section class="quiz-container hidden" id="quizContainer">
+				<h3>Quiz questions:</h3>
 				<!-- Quiz 1: Biology -->
 				<article class="quiz-section" id="biologyQuiz">
 					<h2>Biology Quiz</h2>
@@ -85,12 +87,13 @@
 					<form id="historyForm"></form>
 					<p id="historyScore"></p>
 				</article>
+				<button id="reloadButton" class="roloadPageButton hidden" onClick="resetQuiz()">Reset</button>
 			</section>
 			<section id="quizButton">
 				<button id="loadScriptButton" onclick="getQuizContent()">Start the Quiz >></button>
 			</section>
 
-			<button id="reloadButton" class="roloadPageButton hidden" onClick="resetQuiz()">Reset</button>
+			
 
 		</main>
 		<script

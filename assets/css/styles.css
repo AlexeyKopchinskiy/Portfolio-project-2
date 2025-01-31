@@ -129,6 +129,10 @@ main{
     margin-bottom: 20px;
     align-items:center stretch; /* Ensusre all quiz sections have equal height */
 }
+.quiz-container h3{
+    text-align: center;
+    width: 90%;
+}
 
 .quiz-section {
     border: 1px solid #ccc;
@@ -152,7 +156,7 @@ main{
     border-radius: 7px;
     padding: 20px;
     width: 98%;
-    background-color: var(--highlight-color-2);
+    background-color: var(--secondary-color);
     margin: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -221,7 +225,7 @@ main{
 }
 #countdown{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     color: var(--alert-color);
 }
 
@@ -244,6 +248,12 @@ main{
         min-width: 90%;
         margin: 5px;
         display:flex;
+    }
+    #countdown{
+        font-size: 18px;
+    }
+    li, label{
+        font-size: 12px;
     }
     body{
         font: 4vw;
@@ -274,6 +284,7 @@ main{
 .hidden {
     display: none;
     visibility: hidden;
+    height: 0px !important;
 }
 
 .highlight {
