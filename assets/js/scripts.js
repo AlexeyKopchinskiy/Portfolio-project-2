@@ -4,7 +4,6 @@ let totalScore = 0; // Total score of the user
 let quizzesCompleted = 0; // Number of quizzes completed
 let maxPossibleScore = 0; // Maximum possible score
 let timer; // Timer for the countdown
-let stage = ""; // This will defind the stage at which the success message is displayed
 
 /*
     The getQuizContent() is the main function that gets the quiz content from the forms on the page.
@@ -92,7 +91,7 @@ function loadQuiz(quizType, formId, scoreId) {
 					totalScore += score;
 
 					// Display achieved score in different colors depending on the score
-					scoreMessage(score, quiz.length, scoreElement, "questionResult");
+					changeColor(score, quiz.length, scoreElement);
 
 					scoreElement.textContent = `Your score: ${score} out of ${quiz.length}`; // Display the score
 					quizzesCompleted++; // Increment the number of quizzes completed
@@ -111,50 +110,39 @@ function loadQuiz(quizType, formId, scoreId) {
 						document.getElementById("passMessage").classList.remove("hidden"); // Show the pass message
 
 						// Display achieved score in different colors depending on the score
-						scoreMessage(score, quiz.length, scoreElement, "quizResult");
+						changeColor(score, quiz.length, scoreElement);
+
+						// Display the pass message
+						if (totalScore >= passScore) {
+							document.getElementById("passMessage").textContent = "You passed!";
+							stopCountdown();
+						} else {
+							document.getElementById(
+								"passMessage"
+							).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
+							stopCountdown();
+						}
 					}
 					// Hide the submit button after the quiz is completed
 					quizForm.querySelector('input[type="submit"]').classList.add("hidden");
 				}
 			});
 
-			// Load the next question
-			loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
+			loadQuestion(quiz, quizType, currentQuestionIndex, quizForm); // Load the next question
 		});
 }
 
 /**
 	Function to display the score in different colors
-	depending on the score value.
+	depending on the score.
  */
-function scoreMessage(score, length, scoreElement, stage) {
+function changeColor(score, length, scoreElement) {
 	if (score === length) {
 		scoreElement.classList.add("green");
-
-		if (stage === "quizResult") {
-			document.getElementById("passMessage").textContent =
-				"You passed with a maximum score. Wow!!!";
-			stopCountdown();
-		}
 	} else if (score == length - 1) {
 		scoreElement.classList.add("blue");
-		document.getElementById("passMessage").textContent =
-			"You made it with a single misrake, congrats!";
-		if (stage === "quizResult") {
-			document.getElementById("passMessage").textContent =
-				"You passed with a maximum score. Wow!!!";
-			stopCountdown();
-		}
 	} else {
 		scoreElement.classList.add("red");
-		document.getElementById(
-			"passMessage"
-		).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
-		if (stage === "quizResult") {
-			document.getElementById("passMessage").textContent =
-				"You passed with a maximum score. Wow!!!";
-			stopCountdown();
-		}
 	}
 }
 
@@ -175,7 +163,7 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 	// Create the submit button
 	const submitButton = document.createElement("input");
 	submitButton.type = "submit";
-	submitButton.value = `Check your ${quizType}`; // Personalize the submit button
+	submitButton.value = "Submit Answer";
 	quizForm.appendChild(submitButton);
 }
 
