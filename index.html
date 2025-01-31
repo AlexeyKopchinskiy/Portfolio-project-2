@@ -46,13 +46,12 @@
 			<section id="welcome">
 				<h1>Welcome to the Quiz Portal!</h1>
 				<h3>we will test your general knowledge here</h3>
-				<!-- <p id="comments" class="centered">
-					The quiz will have four topics, three questions each and last 60 seconds.<br> Click the button
-					below when ready!
-				</p> -->
 				<div id="countdown" class="hidden">Time left: <span id="time">60</span> seconds</div>
 			</section>
-
+			<!--
+				totalScoreContainer section will hold the final score of the quiz
+				as well as the follow up message (pass/not pass)
+			-->
 			<section id="totalScoreContainer" class="hidden">
 				<h2>
 					Your total score is <span id="totalScore" class="orange"></span> out of
@@ -60,7 +59,11 @@
 				</h2>
 				<p id="passMessage" class="hidden"></p>
 			</section>
-			
+			<!-- 
+				quizContainer holds questions that are loaded from the 
+				json files in the assets/js folder. Also score for individual
+				tests are displayed here.
+			-->
 			<section class="quiz-container hidden" id="quizContainer">
 				<h3>Quiz questions:</h3>
 				<!-- Quiz 1: Biology -->
@@ -88,6 +91,10 @@
 					<p id="historyScore"></p>
 				</article>
 			</section>
+			<!-- 
+				section below will have comments and reset button showing up 
+				after the quiz starts as well as "Start the Quiz" button.
+			-->
 			<section>
 				<h4 id="comments" class="centered">The quiz will have four topics, three questions each and last 60 seconds.<br> Click the button
 					below when ready!</h4>
@@ -99,11 +106,13 @@
 				</p>				
 			</section>
 		</main>
+		<!-- bootstrap script -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 			crossorigin="anonymous"
 		></script>
+		<!-- main JavaScript file -->
 		<script src="assets/js/scripts.js"></script>
 	</body>
 </html>

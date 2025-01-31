@@ -128,7 +128,7 @@ main{
     flex-wrap:wrap;
     justify-content:space-around;
     margin-bottom: 20px;
-    align-items:center stretch; /* Ensusre all quiz sections have equal height */
+    align-items: center; /* Ensusre all quiz sections have equal height */
 }
 .quiz-container h3{
     text-align: center;
