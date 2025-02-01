@@ -49,6 +49,24 @@ The Contact page provides information on how to get in touch with the Quiz Porta
 3. Navigate through the quizzes and answer the questions.
 4. View your score and see if you passed the quiz.
 
+## Testing
+
+### Lighthouse in Google Chrome
+
+Lighthouse in Google Chrome resulted in overall 94%
+
+![Lighthouse](assets/images/readme/lighthouse-google-chrome.jpg)
+
+### W3 validator
+
+No errors or warnings found by W3 validator
+
+![W3 validator](assets/images/readme/w3-html-validator.jpg)
+
+### The W3C CSS Validation Service
+
+![W3 CSS Validator](assets/images/readme/w3-css-validator.jpg)
+
 ## Future Enhancements
 
 - Add more quiz categories and questions.
@@ -58,7 +76,7 @@ The Contact page provides information on how to get in touch with the Quiz Porta
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://en.wikipedia.org/wiki/MIT_License) file for more details.
 
 ## Acknowledgements
 

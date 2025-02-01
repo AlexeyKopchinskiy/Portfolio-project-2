@@ -5,6 +5,12 @@ let quizzesCompleted = 0; // Number of quizzes completed
 let maxPossibleScore = 0; // Maximum possible score
 let timer; // Timer for the countdown
 
+// try {
+// 	getQuizContent();
+// } catch (error) {
+// 	console.error(error);
+// }
+
 /*
     The getQuizContent() is the main function that gets the quiz content from the forms on the page.
     It displays the quiz score and the total score of the user.
@@ -31,6 +37,14 @@ function getQuizContent() {
     The function also calculates the score of the user and displays it on the page
     The function also checks if the user has passed the test
 */
+
+try {
+	loadQuiz();
+} catch (error) {
+	console.error(error);
+}
+
+
 function loadQuiz(quizType, formId, scoreId) {
 	// Fetch quiz questions from the JSON files
 	// and display them on the page
