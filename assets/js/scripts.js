@@ -38,6 +38,7 @@ function getQuizContent() {
     The function also checks if the user has passed the test
 */
 
+/** Check loadQuiz function for possible errors */
 try {
 	loadQuiz();
 } catch (error) {
