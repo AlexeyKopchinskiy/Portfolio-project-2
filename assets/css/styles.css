@@ -28,6 +28,16 @@ h1{
     margin: 40px 20px;
     font-size: 2.2rem;
 }
+h1,
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+h2 {
+    margin-bottom: 2rem;
+    padding-bottom: 5px;
+    border-bottom: 1px #aba46172 solid;
+}
 h3 {
     font-family: var(--secondary-font);
     color: var(--highlight-color-light);
@@ -38,17 +48,6 @@ h4 {
     color: var(--highlight-color-light);
     padding-bottom:  20px;
     font-size: 1.4vw;
-}
-
-h1,
-h2 {
-    text-transform: uppercase;
-    text-align: center;
-}
-h2 {
-    margin-bottom: 2rem;
-    padding-bottom: 5px;
-    border-bottom: 1px #aba46172 solid;
 }
 h6{
     font-size: smaller;
@@ -189,6 +188,9 @@ main{
     height: 100px;
     margin: 10px;
 }
+.totalScoreContainer h2{
+    font-size: 20px;
+}
 #quizButton{
     display: block;
     margin: 20px auto;
@@ -221,6 +223,7 @@ main{
     text-align: center;
     font-size: 1.5vw;
     color: var(--alert-color);
+    margin: 15px auto;
 }
 /* Styles for section with reset button */
 #reset{
@@ -254,8 +257,12 @@ main{
 @media screen and (max-width: 576px) {
     .quiz-section {
         min-width: 90%;
+        min-height: 300px;
         margin: 5px;
         display:flex;
+    }
+    .totalScoreContainer h2{
+        font-size: 14px;
     }
     #countdown{
         font-size: 18px;
@@ -311,10 +318,19 @@ main{
 }
 
 .red {
-    color: rgb(138, 40, 40);
+    color: rgb(192, 25, 108);
+    font-size: 18px;
     font-weight: bold;
-    text-shadow: 2px 0 #808080, -1px 0 #808080, 0 1px #808080, 0 -1px #808080,
-               1px 1px #808080, -1px -1px #808080, 1px -1px #808080, -1px 1px #808080;
+}
+
+.redBorder{
+    color: red;
+    background-color: white !important;
+    border: 1px red solid !important;
+    border-radius: 5px !important;
+    padding: 5px 7px !important;
+    text-align: center;
+    font-weight: bold;
 }
 
 .orange {

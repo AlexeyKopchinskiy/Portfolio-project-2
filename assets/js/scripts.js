@@ -93,7 +93,7 @@ function loadQuiz(quizType, formId, scoreId) {
 				if (currentQuestionIndex < quiz.length) {
 					loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
 				} else {
-					window.scrollTo({ top: 0, behavior: "smooth" });
+					// window.scrollTo({ top: 0, behavior: "smooth" });
 
 					// Update the total score and display the score for the current quiz
 					totalScore += score;
@@ -101,7 +101,7 @@ function loadQuiz(quizType, formId, scoreId) {
 					// Display achieved score in different colors depending on the score
 					changeColor(score, quiz.length, scoreElement);
 
-					scoreElement.textContent = `Your score: ${score} out of ${quiz.length}`; // Display the score
+					scoreElement.textContent = `Unit score: ${score} out of ${quiz.length}`; // Display the score
 					quizzesCompleted++; // Increment the number of quizzes completed
 					// Display the total score container after the first quiz
 					if (quizzesCompleted === 1) {
@@ -135,7 +135,7 @@ function loadQuiz(quizType, formId, scoreId) {
 							document.getElementById(
 								"passMessage"
 							).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
-							document.getElementById("passMessage").classList.add("red");
+							document.getElementById("passMessage").classList.add("redBorder");
 							stopCountdown();
 						}
 					}
@@ -157,7 +157,7 @@ function changeColor(score, length, scoreElement) {
 	} else if (score == length - 1) {
 		scoreElement.classList.add("blue");
 	} else {
-		scoreElement.classList.add("red");
+		scoreElement.classList.add("redBorder");
 	}
 }
 
