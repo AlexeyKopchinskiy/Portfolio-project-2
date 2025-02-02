@@ -136,6 +136,8 @@ function loadQuiz(quizType, formId, scoreId) {
 								"passMessage"
 							).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
 							document.getElementById("passMessage").classList.add("redBorder");
+							document.getElementById("passMessage").innerHTML +=
+								'<br><button onClick="resetQuiz()" class="roloadPageButton">Try again</button>';
 							stopCountdown();
 						}
 					}
