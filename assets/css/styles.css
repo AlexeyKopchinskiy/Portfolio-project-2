@@ -157,7 +157,7 @@ main{
     padding: 20px;
     width: 98%;
     background-color: var(--secondary-color);
-    margin: 15px;
+    margin: 15px 0 15px 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -328,7 +328,7 @@ main{
     background-color: white !important;
     border: 1px red solid !important;
     border-radius: 5px !important;
-    padding: 5px 7px !important;
+    padding: 15px 7px !important;
     text-align: center;
     font-weight: bold;
 }
