@@ -142,10 +142,10 @@ main{
     background-color: var(--tertiary-color);
     margin: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
     flex-direction: column;
     justify-content: stretch;
     box-sizing: border-box;
+    min-height: 420px;
 }
 /* generic container for about and contact pages --- */
 .quiz-section-generic { 
@@ -313,8 +313,8 @@ main{
 .red {
     color: rgb(138, 40, 40);
     font-weight: bold;
-    text-shadow: 2px 0 #b4b4b4, -1px 0 #b4b4b4, 0 1px #b4b4b4, 0 -1px #b4b4b4,
-               1px 1px #b4b4b4, -1px -1px #b4b4b4, 1px -1px #b4b4b4, -1px 1px #b4b4b4;
+    text-shadow: 2px 0 #808080, -1px 0 #808080, 0 1px #808080, 0 -1px #808080,
+               1px 1px #808080, -1px -1px #808080, 1px -1px #808080, -1px 1px #808080;
 }
 
 .orange {

@@ -93,6 +93,8 @@ function loadQuiz(quizType, formId, scoreId) {
 				if (currentQuestionIndex < quiz.length) {
 					loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
 				} else {
+					window.scrollTo({ top: 0, behavior: "smooth" });
+
 					// Update the total score and display the score for the current quiz
 					totalScore += score;
 
@@ -207,6 +209,8 @@ function startCountdown() {
 // Function to stop the countdown timer
 function stopCountdown() {
 	clearInterval(timer);
+	// Move focus to the top of the page so that the user cas see his final score
+	window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // Function to reset the quiz to the initial state
