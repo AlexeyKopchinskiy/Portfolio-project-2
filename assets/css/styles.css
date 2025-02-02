@@ -312,9 +312,7 @@ main{
 
 .red {
     color: rgb(138, 40, 40);
-    /* background-color: #2E3145; */
     font-weight: bold;
-    /* text-shadow: 1px 1px 5px rgb(198, 198, 198); */
     text-shadow: 2px 0 #b4b4b4, -1px 0 #b4b4b4, 0 1px #b4b4b4, 0 -1px #b4b4b4,
                1px 1px #b4b4b4, -1px -1px #b4b4b4, 1px -1px #b4b4b4, -1px 1px #b4b4b4;
 }

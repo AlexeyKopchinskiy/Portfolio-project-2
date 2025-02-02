@@ -5,38 +5,24 @@ let quizzesCompleted = 0; // Number of quizzes completed
 let maxPossibleScore = 0; // Maximum possible score
 let timer; // Timer for the countdown
 
-// try {
-// 	getQuizContent();
-// } catch (error) {
-// 	console.error(error);
-// }
-
 /*
-    The getQuizContent() is the main function that gets the quiz content from the forms on the page.
-    It displays the quiz score and the total score of the user.
-    The function also checks if the user has passed the test and displays a message accordingly.
-    The function also allows the user to reset the quizzes and start again.
+	The getQuizContent() is the main function that gets the quiz content from the forms on the page.
+	It displays the quiz score and the total score of the user.
+	The function also checks if the user has passed the test and displays a message accordingly.
+	The function also allows the user to reset the quizzes and start again.
 */
 function getQuizContent() {
 	document.getElementById("quizContainer").classList.remove("hidden");
 	document.getElementById("comments").classList.add("hidden");
 	document.getElementById("quizButton").classList.add("hidden");
 	document.getElementById("reloadButton").classList.remove("hidden");
-	// Load quizzes with anchors to the corresponding for on the index.html page
+	// Load quizzes with anchors to the corresponding form on the index.html page
 	loadQuiz("biology", "biologyForm", "biologyScore");
 	loadQuiz("astronomy", "astronomyForm", "astronomyScore");
 	loadQuiz("geography", "geographyForm", "geographyScore");
 	loadQuiz("history", "historyForm", "historyScore");
 	startCountdown();
 }
-
-/* 
-    Function to load a quiz quizType: the type of quiz to load
-    formId: the ID of the form element scoreId: the ID of the score element
-    The function fetches the quiz questions from a JSON file and displays them on the page
-    The function also calculates the score of the user and displays it on the page
-    The function also checks if the user has passed the test
-*/
 
 /** Check loadQuiz function for possible errors */
 try {
@@ -45,7 +31,13 @@ try {
 	console.error(error);
 }
 
-
+/* 
+	Function to load a quiz quizType: the type of quiz to load
+	formId: the ID of the form element scoreId: the ID of the score element
+	The function fetches the quiz questions from a JSON file and displays them on the page
+	The function also calculates the score of the user and displays it on the page
+	The function also checks if the user has passed the test
+*/
 function loadQuiz(quizType, formId, scoreId) {
 	// Fetch quiz questions from the JSON files
 	// and display them on the page
@@ -57,23 +49,22 @@ function loadQuiz(quizType, formId, scoreId) {
 			let scoreElement = document.getElementById(scoreId); // Get the score element
 			let currentQuestionIndex = 0; // Index of the current question
 			let score = 0; // Score of the user for the current quiz
-
 			/*
-                Event listener for the form submission
-                Check if an option is selected and if it is correct
-                Increment the score and load the next question or finish the quiz if all questions have been answered
-                Display the score and the total score
-                Display a message if the user has passed the test
-                Display a message if the user cannot pass the test
-                Display the final message after all quizzes are completed
-                Hide the submit button after the quiz is completed
-                Display the total score container after the first quiz
-                Display the reset button after all quizzes are completed
-                Display the pass message after all quizzes are completed
-                Display the total score after all quizzes are completed
-                Display the maximum possible score after all quizzes are completed
-                Display the pass message after all quizzes are completed
-            */
+				Event listener for the form submission
+				Check if an option is selected and if it is correct
+				Increment the score and load the next question or finish the quiz if all questions have been answered
+				Display the score and the total score
+				Display a message if the user has passed the test
+				Display a message if the user cannot pass the test
+				Display the final message after all quizzes are completed
+				Hide the submit button after the quiz is completed
+				Display the total score container after the first quiz
+				Display the reset button after all quizzes are completed
+				Display the pass message after all quizzes are completed
+				Display the total score after all quizzes are completed
+				Display the maximum possible score after all quizzes are completed
+				Display the pass message after all quizzes are completed
+			*/
 			quizForm.addEventListener("submit", function (event) {
 				event.preventDefault(); // Prevent the form from submitting
 
@@ -156,9 +147,8 @@ function loadQuiz(quizType, formId, scoreId) {
 }
 
 /**
-	Function to display the score in different colors
-	depending on the score.
- */
+	Function to display the score in different colors depending on the score.
+*/
 function changeColor(score, length, scoreElement) {
 	if (score === length) {
 		scoreElement.classList.add("green");
@@ -201,17 +191,17 @@ function startCountdown() {
 	timer = setInterval(() => {
 		timeLeft--;
 		timeElement.textContent = timeLeft;
-
+		// Handle the case when user runs out of time
 		if (timeLeft <= 0) {
 			clearInterval(timer);
 			document.getElementById("quizContainer").classList.add("hidden");
-			alert("Time is up! Sorrry, The quiz has ended. Let's try again!");
 			document.getElementById("comments").classList.remove("hidden"); // Hide the comments
 			document.getElementById("quizButton").classList.remove("hidden"); // Hide the quiz button
 			document.getElementById("countdown").classList.add("hidden"); // Hide the quiz button
+			alert("Time is up! Sorrry, The quiz has ended. Let's try again!");
 			resetQuiz();
 		}
-	}, 1000);
+	}, 1000); /* 1000 speed equals to 1 minute */
 }
 
 // Function to stop the countdown timer
@@ -219,6 +209,7 @@ function stopCountdown() {
 	clearInterval(timer);
 }
 
+// Function to reset the quiz to the initial state
 function resetQuiz() {
 	location.reload();
 }
