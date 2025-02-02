@@ -110,7 +110,7 @@ function loadQuiz(quizType, formId, scoreId) {
 
 					document.getElementById("totalScore").textContent = totalScore; // Display the total score
 					document.getElementById("maxScore").textContent = maxPossibleScore; // Display the maximum possible score
-					const passScore = maxPossibleScore - 1; // Set the passing score to be one less than the maximum possible score
+					const passScore = maxPossibleScore - 2; // Set the passing score to be one less than the maximum possible score
 
 					// Display the final message after all quizzes are completed
 					if (quizzesCompleted === quizzes.length) {
@@ -126,7 +126,7 @@ function loadQuiz(quizType, formId, scoreId) {
 								"You passed with the highest score! Congratulations!!!";
 							document.getElementById("passMessage").classList.add("green");
 							stopCountdown();
-						} else if (totalScore == --maxPossibleScore) {
+						} else if (totalScore >= maxPossibleScore - 2) {
 							document.getElementById("passMessage").textContent =
 								"You passed through the skin of your teeth... WoW!";
 							document.getElementById("passMessage").classList.add("orange");

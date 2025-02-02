@@ -9,7 +9,9 @@ The goal of the website is to test the user's understanding of basic facts relat
 
 ## Website Features
 
-The website features four quizzes with topics targeting knowledge in biology, astronomy, geography, and history. Each quiz-box will hold 3 to 5 questions on the relevant topic. Within each mini-session, there will be several sets of questions. After a set is complete, the achieved score will appear next to the minimum pass-score.
+The website features four quizzes with topics targeting knowledge in biology, astronomy, geography, and history. Each quiz-box will hold 3 to 5 questions on the relevant topic. Within each mini-session, there will be several sets of questions. After a set is complete, the achieved score will appear next to the maximum possible score in this set.
+
+The final score that will pass has to be equal or exceed to the passScore which is currently set to be the total number of questions - 2
 
 ### Main Page
 
