@@ -69,6 +69,36 @@ No errors or warnings found by W3 validator
 
 ![W3 CSS Validator](assets/images/readme/w3-css-validator.jpg)
 
+### JavaScript validation with Jshint validator
+
+No errors were encountered by Jshint validator
+The following metrics were returned for the scripts.js file:
+
+There are 12 functions in this file.
+Function with the largest signature take 4 arguments, while the median is 1.
+Largest function has 35 statements in it, while the median is 4.5.
+The most complex function has a cyclomatic complexity value of 8 while the median is 1.
+
+### Unfixed bugs
+
+There seem to be no unfixed bugs at the moment
+
+## Deployment
+
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+In the GitHub repository, navigate to the Settings tab
+Click the "Pages" link at the left side
+Select "Deploy from a branch" and "main" as the Branch. 
+Click save
+![The active link can be found here:](https://alexeykopchinskiy.github.io/Portfolio-project-2/)
+
+**In order to peply the project on the local environment do as follows:**
+Navigate to the Code tab in the GitHub project repository
+Click on the green Code button and select "Open with GitHub Desktop"
+please note that in order for the above step to work a GitHub Desktop should be installed locally. 
+![Follow this link to get the GitHub Desktop](https://desktop.github.com/download/)
+From within the GitHub Desktop app click "Open in Visual Studio Code" if this is the editor of your choice
+
 ## Future Enhancements
 
 - Add more quiz categories and questions.
