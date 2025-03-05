@@ -86,18 +86,21 @@ There seem to be no unfixed bugs at the moment
 ## Deployment
 
 The site was deployed to GitHub pages. The steps to deploy are as follows:
-In the GitHub repository, navigate to the Settings tab
-Click the "Pages" link at the left side
-Select "Deploy from a branch" and "main" as the Branch. 
-Click save
+
+ - In the GitHub repository, navigate to the Settings tab
+ - Click the "Pages" link at the left side
+ - Select "Deploy from a branch" and "main" as the Branch. 
+ - Click save
+
 The active link can be found here: https://alexeykopchinskiy.github.io/Portfolio-project-2/
 
 **In order to peply the project on the local environment do as follows:**
-Navigate to the Code tab in the GitHub project repository
-Click on the green Code button and select "Open with GitHub Desktop"
-please note that in order for the above step to work a GitHub Desktop should be installed locally. 
-Follow this link to get the GitHub Desktop: https://desktop.github.com/download/
-From within the GitHub Desktop app click "Open in Visual Studio Code" if this is the editor of your choice
+
+ - Navigate to the Code tab in the GitHub project repository
+ - Click on the green Code button and select "Open with GitHub Desktop"
+ - please note that in order for the above step to work a GitHub Desktop should be installed locally. 
+ - Follow this link to get the GitHub Desktop: https://desktop.github.com/download/
+ - From within the GitHub Desktop app click "Open in Visual Studio Code" if this is the editor of your choice
 
 ## Future Enhancements
 
