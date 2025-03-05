@@ -85,7 +85,7 @@ There seem to be no unfixed bugs at the moment
 
 ## Deployment
 
-The site was deployed to GitHub pages. The steps to deploy are as follows:
+**The site was deployed to GitHub pages. The steps to deploy are as follows:**
 
  - In the GitHub repository, navigate to the Settings tab
  - Click the "Pages" link at the left side
