@@ -10,6 +10,9 @@ let quizzesCompleted = 0;
 let maxPossibleScore = 0;
 let timer;
 
+// Adding click event listener to the element with the ID "loadScriptButton" 
+document.getElementById("loadScriptButton").addEventListener("click", getQuizContent);
+
 /**
 	The getQuizContent() is the main function that gets the quiz content from the forms on the page.
 	It displays the quiz score and the total score of the user.
@@ -217,6 +220,8 @@ function stopCountdown() {
 	window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Adding click event listener to the element with the ID "reloadButton" 
+document.getElementById("reloadButton").addEventListener("click", resetQuiz);
 /**
 	Function to reset the quiz to the initial state
 */
