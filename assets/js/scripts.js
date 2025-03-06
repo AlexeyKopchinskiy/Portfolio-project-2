@@ -125,7 +125,7 @@ function loadQuiz(quizType, formId, scoreId) {
 							).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
 							document.getElementById("passMessage").classList.add("redBorder");
 							document.getElementById("passMessage").innerHTML +=
-								'<br><button onClick="resetQuiz()" class="roloadPageButton">Try again</button>';
+								'<br><button onClick="resetQuiz()" class="reloadPageButton">Try again</button>';
 							stopCountdown();
 						}
 					}
@@ -141,7 +141,7 @@ function loadQuiz(quizType, formId, scoreId) {
 
 /**
  *	Function to display the score in different colors depending on the score.
-*/
+ */
 function changeColor(score, length, scoreElement) {
 	if (score === length) {
 		scoreElement.classList.add("green");
@@ -154,10 +154,10 @@ function changeColor(score, length, scoreElement) {
 
 /**
  *	Function to display the next question.
- *	It clears the form, gets the current question and formats the 
- *	html presentation of the questions and  appends the question 
- *	to the form. 
-*/
+ *	It clears the form, gets the current question and formats the
+ *	html presentation of the questions and  appends the question
+ *	to the form.
+ */
 function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 	quizForm.innerHTML = "";
 	const q = quiz[currentQuestionIndex];
@@ -180,13 +180,13 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 }
 
 /**
- *	Function to start the countdown timer. 
+ *	Function to start the countdown timer.
  *	It sets the default countdown value is set to 60 seconds
  *	and handles the case when user runs out of time:
  *	hide the comments, hide the quiz button, hide the quiz button
  *	or hide the whole quizContainer
  *	Note that value 1000 for speed equals to 1 minute.
-*/
+ */
 function startCountdown() {
 	const countdownElement = document.getElementById("countdown");
 	const timeElement = document.getElementById("time");
@@ -204,7 +204,7 @@ function startCountdown() {
 			document.getElementById("comments").classList.remove("hidden");
 			document.getElementById("quizButton").classList.remove("hidden");
 			document.getElementById("countdown").classList.add("hidden");
-			alert("Time is up! Sorrry, The quiz has ended. Let's try again!");
+			alert("Time is up! Sorry, The quiz has ended. Let's try again!");
 			resetQuiz();
 		}
 	}, 1000);

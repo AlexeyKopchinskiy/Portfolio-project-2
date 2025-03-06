@@ -229,7 +229,7 @@ main{
 #reset{
     text-align: center;
 }
-.roloadPageButton{
+.reloadPageButton{
     margin: 10px auto;
     padding: 5px 30px;
     background-color: var(--tertiary-color);
