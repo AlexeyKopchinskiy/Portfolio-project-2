@@ -35,7 +35,7 @@ function getQuizContent() {
 
 //	Check loadQuiz function for possible errors
 try {
-	loadQuiz();
+	loadQuiz("biology", "biologyForm", "biologyScore");
 } catch (error) {
 	console.error(error);
 }
