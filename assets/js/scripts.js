@@ -11,12 +11,7 @@ const passMessage = document.getElementById("passMessage");
 const countdownElement = document.getElementById("countdown");
 const timeElement = document.getElementById("time");
 
-/*
-	Set list of quiz types and initial score variables:
- 	List of quiz types, total score of the user, number 
- 	of quizzes completed, maximum possible score and Timer
- 	for the countdown
-*/
+// Set list of quiz types and initial score variables
 const quizzes = ["biology", "astronomy", "geography", "history"];
 let totalScore = 0;
 let quizzesCompleted = 0;
@@ -26,7 +21,6 @@ let timer;
 // Function to toggle visibility of elements
 function toggleVisibility(elements, action) {
 	elements.forEach((element) => {
-		// document.getElementById(element).classList[action]("hidden");
 		element.classList[action]("hidden");
 	});
 }
@@ -35,7 +29,6 @@ function toggleVisibility(elements, action) {
 function loadAllQuizzes() {
 	const quizzes = ["biology", "astronomy", "geography", "history"];
 	quizzes.forEach((quiz) => {
-		console.log(`Loading quiz: ${quiz}`);
 		loadQuiz(quiz, `${quiz}Form`, `${quiz}Score`);
 	});
 }
@@ -60,7 +53,7 @@ function loadQuiz(quizType, formId, scoreId) {
 		.then((response) => response.json())
 		.then((quiz) => {
 			maxPossibleScore += quiz.length;
-			console.log(maxPossibleScore);
+
 			let quizForm = document.getElementById(formId);
 			let scoreElement = document.getElementById(scoreId);
 			let currentQuestionIndex = 0;
@@ -134,6 +127,9 @@ function loadQuiz(quizType, formId, scoreId) {
 			}
 
 			loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
+		})
+		.catch((error) => { // Catch any errors and log them to the console
+			console.error(`Error loading ${quizType}.json: ${error}`);
 		});
 }
 
@@ -186,9 +182,8 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
  *	Note that value 1000 for speed equals to 1 minute.
  */
 function startCountdown() {
-	let timeLeft = 60;
-
 	countdownElement.classList.remove("hidden");
+	let timeLeft = 60;
 
 	timer = setInterval(() => {
 		timeLeft--;
