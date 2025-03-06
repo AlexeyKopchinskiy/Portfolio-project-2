@@ -10,6 +10,25 @@ let quizzesCompleted = 0;
 let maxPossibleScore = 0;
 let timer;
 
+
+
+
+// Function to toggle visibility of elements
+function toggleVisibility(elements, action) {
+    elements.forEach(element => {
+        document.getElementById(element).classList[action]("hidden");
+    });
+}
+
+// Function to load all quizzes using a loop
+function loadAllQuizzes() {
+    const quizzes = ["biology", "astronomy", "geography", "history"];
+    quizzes.forEach(quiz => loadQuiz(quiz, `${quiz}Form`, `${quiz}Score`));
+}
+
+
+
+
 // Adding click event listener to the element with the ID "loadScriptButton"
 document.getElementById("loadScriptButton").addEventListener("click", getQuizContent);
 
@@ -20,17 +39,22 @@ document.getElementById("loadScriptButton").addEventListener("click", getQuizCon
  *	The function also allows the user to reset the quizzes and start again.
 */
 function getQuizContent() {
-	document.getElementById("quizContainer").classList.remove("hidden");
-	document.getElementById("comments").classList.add("hidden");
-	document.getElementById("quizButton").classList.add("hidden");
-	document.getElementById("reloadButton").classList.remove("hidden");
+	// document.getElementById("quizContainer").classList.remove("hidden");
+	// document.getElementById("comments").classList.add("hidden");
+	// document.getElementById("quizButton").classList.add("hidden");
+	// document.getElementById("reloadButton").classList.remove("hidden");
 
 	// Load quizzes with anchors to the corresponding form on the index.html page
-	loadQuiz("biology", "biologyForm", "biologyScore");
-	loadQuiz("astronomy", "astronomyForm", "astronomyScore");
-	loadQuiz("geography", "geographyForm", "geographyScore");
-	loadQuiz("history", "historyForm", "historyScore");
-	startCountdown();
+	// loadQuiz("biology", "biologyForm", "biologyScore");
+	// loadQuiz("astronomy", "astronomyForm", "astronomyScore");
+	// loadQuiz("geography", "geographyForm", "geographyScore");
+	// loadQuiz("history", "historyForm", "historyScore");
+	// startCountdown();
+
+	toggleVisibility(["quizContainer", "reloadButton"], "remove");
+    toggleVisibility(["comments", "quizButton"], "add");
+    loadAllQuizzes();
+    startCountdown();
 }
 
 //	Check loadQuiz function for possible errors
@@ -41,102 +65,91 @@ try {
 }
 
 /**
- *	The function fetches the quiz questions from a JSON file and displays them on the page. 
- *	It also calculates the score and checks if the user has passed the test. 
+ *	The function loadQuiz fetches the quiz questions from a JSON file and displays
+ *	them on the page. It also calculates the score and checks if the user has passed the test. 
 */
 function loadQuiz(quizType, formId, scoreId) {
-	// Fetch quiz questions from the JSON files
-	// and display them on the page
-	fetch(`assets/js/${quizType}.json`)
-		.then((response) => response.json())
-		.then((quiz) => {
-			maxPossibleScore += quiz.length;
-			let quizForm = document.getElementById(formId);
-			let scoreElement = document.getElementById(scoreId);
-			let currentQuestionIndex = 0;
-			let score = 0;
+    fetch(`assets/js/${quizType}.json`)
+        .then((response) => response.json())
+        .then((quiz) => {
+            maxPossibleScore += quiz.length;
+            let quizForm = document.getElementById(formId);
+            let scoreElement = document.getElementById(scoreId);
+            let currentQuestionIndex = 0;
+            let score = 0;
 
-			quizForm.addEventListener("submit", function (event) {
-				event.preventDefault();
+            // Check if the event listener is already added
+            if (!quizForm.dataset.listenerAdded) {
+                quizForm.addEventListener("submit", function (event) {
+                    event.preventDefault();
 
-				// Check if an option is selected
-				const selectedOption = document.querySelector(
-					`input[name="${quizType}Question${currentQuestionIndex}"]:checked`
-				);
+                    const selectedOption = document.querySelector(
+                        `input[name="${quizType}Question${currentQuestionIndex}"]:checked`
+                    );
 
-				// Alert if it is not
-				if (!selectedOption) {
-					alert("Please select an answer!");
-					return;
-				}
+                    if (!selectedOption) {
+                        alert("Please select an answer!");
+                        return;
+                    }
 
-				// Check if the selected option is correct and increment the score if it is
-				if (selectedOption.value === quiz[currentQuestionIndex].answer) {
-					score++;
-				}
+                    if (selectedOption.value === quiz[currentQuestionIndex].answer) {
+                        score++;
+                    }
 
-				// Move to the next question
-				currentQuestionIndex++;
+                    currentQuestionIndex++;
 
-				// Checking the progress of the quiz:
-				// Load the next question or finish the quiz if all questions have been answered
-				if (currentQuestionIndex < quiz.length) {
-					loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
-				} else {
-					// Update the total score and display the score for the current quiz
-					totalScore += score;
+                    if (currentQuestionIndex < quiz.length) {
+                        loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
+                    } else {
+                        totalScore += score;
+                        changeColor(score, quiz.length, scoreElement);
+                        scoreElement.textContent = `Unit score: ${score} out of ${quiz.length}`;
+                        quizzesCompleted++;
 
-					// Display achieved score in different colors depending on the score
-					changeColor(score, quiz.length, scoreElement);
+                        if (quizzesCompleted === 1) {
+                            document.getElementById("totalScoreContainer").classList.remove("hidden");
+                        }
 
-					scoreElement.textContent = `Unit score: ${score} out of ${quiz.length}`;
-					quizzesCompleted++;
+                        document.getElementById("totalScore").textContent = totalScore;
+                        document.getElementById("maxScore").textContent = maxPossibleScore;
+                        // const passScore = Math.round(maxPossibleScore * 0.7);
+						const passScore = Math.round(maxPossibleScore - 2);
 
-					if (quizzesCompleted === 1) {
-						document.getElementById("totalScoreContainer").classList.remove("hidden");
-					}
+                        if (quizzesCompleted === quizzes.length) {
+                            document.getElementById("totalScore").classList.add("highlight");
+                            document.getElementById("passMessage").classList.remove("hidden");
+                            changeColor(score, quiz.length, scoreElement);
 
-					document.getElementById("totalScore").textContent = totalScore;
-					document.getElementById("maxScore").textContent = maxPossibleScore;
-					const passScore = Math.round(maxPossibleScore * 0.7);
+                            if (totalScore === maxPossibleScore) {
+                                document.getElementById("passMessage").textContent =
+                                    "You passed with the highest score! Congratulations!!!";
+                                document.getElementById("passMessage").classList.add("green");
+                                stopCountdown();
+                            } else if (totalScore >= passScore) {
+                                document.getElementById("passMessage").textContent =
+                                    "You passed through the skin of your teeth... WoW!";
+                                document.getElementById("passMessage").classList.add("orange");
+                                stopCountdown();
+                            } else {
+                                document.getElementById(
+                                    "passMessage"
+                                ).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
+                                document.getElementById("passMessage").classList.add("redBorder");
+                                document.getElementById("passMessage").innerHTML +=
+                                    '<br><button onClick="resetQuiz()" class="reloadPageButton">Try again</button>';
+                                stopCountdown();
+                            }
+                        }
+                        quizForm.querySelector('input[type="submit"]').classList.add("hidden");
+                    }
+                });
 
-					// Display the final message after all quizzes are completed
-					if (quizzesCompleted === quizzes.length) {
-						document.getElementById("totalScore").classList.add("highlight");
-						document.getElementById("passMessage").classList.remove("hidden");
+                // Mark that the event listener has been added
+                quizForm.dataset.listenerAdded = true;
+            }
 
-						// Display achieved score in different colors depending on the score
-						changeColor(score, quiz.length, scoreElement);
-
-						// Display the pass message
-						if (totalScore === maxPossibleScore) {
-							document.getElementById("passMessage").textContent =
-								"You passed with the highest score! Congratulations!!!";
-							document.getElementById("passMessage").classList.add("green");
-							stopCountdown();
-						} else if (totalScore >= maxPossibleScore - 2) {
-							document.getElementById("passMessage").textContent =
-								"You passed through the skin of your teeth... WoW!";
-							document.getElementById("passMessage").classList.add("orange");
-							stopCountdown();
-						} else {
-							document.getElementById(
-								"passMessage"
-							).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
-							document.getElementById("passMessage").classList.add("redBorder");
-							document.getElementById("passMessage").innerHTML +=
-								'<br><button onClick="resetQuiz()" class="reloadPageButton">Try again</button>';
-							stopCountdown();
-						}
-					}
-					// Hide the submit button after the quiz is completed
-					quizForm.querySelector('input[type="submit"]').classList.add("hidden");
-				}
-			});
-
-			// Load the next question
-			loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
-		});
+            loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
+        });
 }
 
 /**
