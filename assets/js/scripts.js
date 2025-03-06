@@ -1,8 +1,8 @@
 /**
-	Set list of quiz types and initial score variables:
-	List of quiz types, total score of the user, number 
-	of quizzes completed, maximum possible score and Timer
-	for the countdown
+ *	Set list of quiz types and initial score variables:
+ *	List of quiz types, total score of the user, number 
+ *	of quizzes completed, maximum possible score and Timer
+ *	for the countdown
 */
 const quizzes = ["biology", "astronomy", "geography", "history"];
 let totalScore = 0;
@@ -10,14 +10,14 @@ let quizzesCompleted = 0;
 let maxPossibleScore = 0;
 let timer;
 
-// Adding click event listener to the element with the ID "loadScriptButton" 
+// Adding click event listener to the element with the ID "loadScriptButton"
 document.getElementById("loadScriptButton").addEventListener("click", getQuizContent);
 
 /**
-	The getQuizContent() is the main function that gets the quiz content from the forms on the page.
-	It displays the quiz score and the total score of the user.
-	The function also checks if the user has passed the test and displays a message accordingly.
-	The function also allows the user to reset the quizzes and start again.
+ *	The getQuizContent() is the main function that gets the quiz content from the forms on the page.
+ *	It displays the quiz score and the total score of the user.
+ *	The function also checks if the user has passed the test and displays a message accordingly.
+ *	The function also allows the user to reset the quizzes and start again.
 */
 function getQuizContent() {
 	document.getElementById("quizContainer").classList.remove("hidden");
@@ -40,9 +40,9 @@ try {
 	console.error(error);
 }
 
-/** 
-	The function fetches the quiz questions from a JSON file and displays them on the page. 
-	It also calculates the score and checks if the user has passed the test. 
+/**
+ *	The function fetches the quiz questions from a JSON file and displays them on the page. 
+ *	It also calculates the score and checks if the user has passed the test. 
 */
 function loadQuiz(quizType, formId, scoreId) {
 	// Fetch quiz questions from the JSON files
@@ -98,7 +98,7 @@ function loadQuiz(quizType, formId, scoreId) {
 
 					document.getElementById("totalScore").textContent = totalScore;
 					document.getElementById("maxScore").textContent = maxPossibleScore;
-					const passScore = maxPossibleScore - 2;
+					const passScore = Math.round(maxPossibleScore * 0.7);
 
 					// Display the final message after all quizzes are completed
 					if (quizzesCompleted === quizzes.length) {
@@ -140,7 +140,7 @@ function loadQuiz(quizType, formId, scoreId) {
 }
 
 /**
-	Function to display the score in different colors depending on the score.
+ *	Function to display the score in different colors depending on the score.
 */
 function changeColor(score, length, scoreElement) {
 	if (score === length) {
@@ -153,10 +153,10 @@ function changeColor(score, length, scoreElement) {
 }
 
 /**
-	Function to display the next question.
-	It clears the form, gets the current question and formats the 
-	html presentation of the questions and  appends the question 
-	to the form. 
+ *	Function to display the next question.
+ *	It clears the form, gets the current question and formats the 
+ *	html presentation of the questions and  appends the question 
+ *	to the form. 
 */
 function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 	quizForm.innerHTML = "";
@@ -180,12 +180,12 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
 }
 
 /**
-	Function to start the countdown timer. 
-	It sets the default countdown value is set to 60 seconds
-	and handles the case when user runs out of time:
-	hide the comments, hide the quiz button, hide the quiz button
-	or hide the whole quizContainer
-	Note that value 1000 for speed equals to 1 minute.
+ *	Function to start the countdown timer. 
+ *	It sets the default countdown value is set to 60 seconds
+ *	and handles the case when user runs out of time:
+ *	hide the comments, hide the quiz button, hide the quiz button
+ *	or hide the whole quizContainer
+ *	Note that value 1000 for speed equals to 1 minute.
 */
 function startCountdown() {
 	const countdownElement = document.getElementById("countdown");
@@ -211,19 +211,19 @@ function startCountdown() {
 }
 
 /**
-	Function to stop the countdown timer with the goal 
-	to move focus to the top of the page so that the user 
-	cas see his final score
+ *	Function to stop the countdown timer with the goal 
+ *	to move focus to the top of the page so that the user 
+ *	cas see his final score
 */
 function stopCountdown() {
 	clearInterval(timer);
 	window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Adding click event listener to the element with the ID "reloadButton" 
+// Adding click event listener to the element with the ID "reloadButton"
 document.getElementById("reloadButton").addEventListener("click", resetQuiz);
 /**
-	Function to reset the quiz to the initial state
+ *	Function to reset the quiz to the initial state
 */
 function resetQuiz() {
 	location.reload();
