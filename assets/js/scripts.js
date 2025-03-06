@@ -10,6 +10,8 @@ const maxScoreElement = document.getElementById("maxScore");
 const passMessage = document.getElementById("passMessage");
 const countdownElement = document.getElementById("countdown");
 const timeElement = document.getElementById("time");
+const ALERT_SELECT_ANSWER = "Please select an answer!";
+const MESSAGE_TIME_UP = "Time is up! Sorry, The quiz has ended. Let's try again!";
 
 // Set list of quiz types and initial score variables
 const quizzes = ["biology", "astronomy", "geography", "history"];
@@ -27,7 +29,7 @@ function toggleVisibility(elements, action) {
 
 // Function to load all quizzes using a loop
 function loadAllQuizzes() {
-	const quizzes = ["biology", "astronomy", "geography", "history"];
+	// const quizzes = ["biology", "astronomy", "geography", "history"];
 	quizzes.forEach((quiz) => {
 		loadQuiz(quiz, `${quiz}Form`, `${quiz}Score`);
 	});
@@ -69,7 +71,7 @@ function loadQuiz(quizType, formId, scoreId) {
 					);
 
 					if (!selectedOption) {
-						alert("Please select an answer!");
+						alert(ALERT_SELECT_ANSWER);
 						return;
 					}
 
@@ -128,7 +130,8 @@ function loadQuiz(quizType, formId, scoreId) {
 
 			loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
 		})
-		.catch((error) => { // Catch any errors and log them to the console
+		.catch((error) => {
+			// Catch any errors and log them to the console
 			console.error(`Error loading ${quizType}.json: ${error}`);
 		});
 }
@@ -195,7 +198,8 @@ function startCountdown() {
 			comments.classList.remove("hidden");
 			quizButton.classList.remove("hidden");
 			countdownElement.classList.add("hidden");
-			alert("Time is up! Sorry, The quiz has ended. Let's try again!");
+			// alert("Time is up! Sorry, The quiz has ended. Let's try again!");
+			alert(MESSAGE_TIME_UP);
 			resetQuiz();
 		}
 	}, 1000);

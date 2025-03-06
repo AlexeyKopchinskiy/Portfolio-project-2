@@ -204,7 +204,8 @@ main{
 }
 #quizButton button{
     background-color: #333;
-    color: #fff;
+    font-size:larger;
+    color: #b9df7c;
     border: none;
     border-radius: 5px;
     cursor: pointer;
