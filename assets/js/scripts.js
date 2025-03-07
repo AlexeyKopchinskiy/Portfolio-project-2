@@ -61,6 +61,23 @@ function getQuizContent() {
 	startCountdown();
 }
 
+// displayCorrectAnswers function loops through the quiz array and dynamically 
+// generates a list of correct answers to display below the quiz:
+function displayCorrectAnswers(quiz, quizForm) {
+	const answersContainer = document.createElement("div");
+	answersContainer.classList.add("answers-container");
+	answersContainer.innerHTML = "<h3>Correct Answers:</h3>";
+
+	quiz.forEach((question, index) => {
+		const answerElement = document.createElement("p");
+		answerElement.textContent = `Question ${index + 1}: ${question.answer}`;
+		answersContainer.appendChild(answerElement);
+	});
+
+	quizForm.appendChild(answersContainer);
+}
+
+
 /**
  *	The function loadQuiz fetches the quiz questions from a JSON file and displays
  *	them on the page. It also calculates the score and checks if the user has passed the test.
