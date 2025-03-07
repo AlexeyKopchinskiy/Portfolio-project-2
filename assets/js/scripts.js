@@ -213,7 +213,7 @@ function loadQuestion(quiz, quizType, currentQuestionIndex, quizForm) {
  */
 function startCountdown() {
 	countdownElement.classList.remove("hidden");
-	let timeLeft = 60;
+	let timeLeft = 120;
 
 	timer = setInterval(() => {
 		timeLeft--;
