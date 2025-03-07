@@ -230,21 +230,33 @@ main{
 /* Styles for showing anwerst inside quiz section */
 .answers-container {
     margin-top: 20px;
-    padding: 10px;
+    padding: 15px;
     border-top: 2px solid #ccc;
+    background-color: #f9f9f9; /* Optional: light background */
 }
 
 .answers-container h3 {
-    color: #333;
     font-size: 1.2em;
+    color: #333;
     margin-bottom: 10px;
 }
 
-.answers-container p {
-    margin: 5px 0;
-    color: #72a4da;
-    font-size: 1em;
+.question-block {
+    margin-bottom: 15px; /* Space between questions */
 }
+
+.question-text {
+    font-size: 0.9em; /* Smaller font for the question */
+    font-style: italic;
+    color: #555;
+}
+
+.answer-text {
+    font-size: 1em; /* Normal font for the correct answer */
+    color: #007bff; /* Highlight the correct answer */
+    margin: 5px 0;
+}
+
 
 /* Styles for section with reset button */
 #reset{

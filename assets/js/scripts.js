@@ -66,16 +66,37 @@ function getQuizContent() {
 function displayCorrectAnswers(quiz, quizForm) {
 	const answersContainer = document.createElement("div");
 	answersContainer.classList.add("answers-container");
+
 	answersContainer.innerHTML = "<h3>Correct Answers:</h3>";
 
 	quiz.forEach((question, index) => {
-		const answerElement = document.createElement("p");
-		answerElement.textContent = `Question ${index + 1}: ${question.answer}`;
-		answersContainer.appendChild(answerElement);
+		// Create a block for each question and its correct answer
+		const questionBlock = document.createElement("div");
+		questionBlock.classList.add("question-block"); // Assign class for further styling
+
+		// Add the question text
+		const questionText = document.createElement("p");
+		questionText.classList.add("question-text"); // Assign class for styling
+		questionText.textContent = `Question ${index + 1}: ${question.question}`;
+
+		// Add the correct answer text
+		const answerText = document.createElement("p");
+		answerText.classList.add("answer-text"); // Assign class for styling
+		answerText.textContent = `Correct Answer: ${question.answer}`;
+
+		// Append both the question and the answer to the block
+		questionBlock.appendChild(questionText);
+		questionBlock.appendChild(answerText);
+
+		// Append the block to the container
+		answersContainer.appendChild(questionBlock);
 	});
 
+	// Append the answers container to the quiz form
 	quizForm.appendChild(answersContainer);
 }
+
+
 
 
 /**
