@@ -87,7 +87,6 @@ function loadQuiz(quizType, formId, scoreId) {
 		.then((response) => response.json())
 		.then((quiz) => {
 			// Shuffle the questions
-			// quiz = shuffleArray(quiz);
 
 			// Select only 3 random questions
 			quiz = getRandomSubset(quiz, 3);
@@ -132,6 +131,9 @@ function loadQuiz(quizType, formId, scoreId) {
 						changeColor(score, quiz.length, scoreElement);
 						scoreElement.textContent = `Unit score: ${score} out of ${quiz.length}`;
 						quizzesCompleted++;
+
+						// Display correct answers
+						displayCorrectAnswers(quiz, quizForm);
 
 						if (quizzesCompleted === 1) {
 							totalScoreContainer.classList.remove("hidden");
