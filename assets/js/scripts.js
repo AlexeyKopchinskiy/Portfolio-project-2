@@ -14,13 +14,13 @@ const ALERT_SELECT_ANSWER = "Please select an answer!";
 const MESSAGE_TIME_UP = "Time is up! Sorry, The quiz has ended. Let's try again!";
 
 // Set list of quiz types and initial score variables
-const quizzes = ["biology", "astronomy", "geography", "history"];
+const quizzes = ["biology", "astronomy", "geography", "history", "sports", "pop"];
 let totalScore = 0;
 let quizzesCompleted = 0;
 let maxPossibleScore = 0;
 let timer;
 
-// Function to toggle visibility of elements
+// Helper function to toggle visibility of elements
 function toggleVisibility(elements, action) {
 	elements.forEach((element) => {
 		element.classList[action]("hidden");
@@ -33,6 +33,21 @@ function loadAllQuizzes() {
 	quizzes.forEach((quiz) => {
 		loadQuiz(quiz, `${quiz}Form`, `${quiz}Score`);
 	});
+}
+
+// Helper function to shuffle an array
+function shuffleArray(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+	return array;
+}
+
+// Helper function that selects a specified number (n) of random items from an array
+function getRandomSubset(array, n) {
+	const shuffled = shuffleArray(array);
+	return shuffled.slice(0, n);
 }
 
 // Adding click event listener to the element with the ID "loadScriptButton"
@@ -54,6 +69,17 @@ function loadQuiz(quizType, formId, scoreId) {
 	fetch(`assets/js/${quizType}.json`)
 		.then((response) => response.json())
 		.then((quiz) => {
+			// Shuffle the questions
+			// quiz = shuffleArray(quiz);
+
+			// Select only 3 random questions
+			quiz = getRandomSubset(quiz, 3);
+
+			// Shuffle the answers for each question
+			quiz.forEach((question) => {
+				question.options = shuffleArray(question.options);
+			});
+
 			maxPossibleScore += quiz.length;
 
 			let quizForm = document.getElementById(formId);
@@ -61,7 +87,8 @@ function loadQuiz(quizType, formId, scoreId) {
 			let currentQuestionIndex = 0;
 			let score = 0;
 
-			// Check if the event listener is already added
+			// Check if the event listener is already added and if not,
+			// add the event listener to the form to handle the quiz submission
 			if (!quizForm.dataset.listenerAdded) {
 				quizForm.addEventListener("submit", function (event) {
 					event.preventDefault();

@@ -13,5 +13,50 @@
 		"question": "What is the longest river in the world?",
 		"options": ["Amazon", "Nile", "Yangtze", "Mississippi"],
 		"answer": "Nile"
+	},
+	{
+		"question": "What is the name of the deepest tranch in the world?",
+		"options": ["Mariana", "Tonga", "Java", "Kermadec"],
+		"answer": "Mariana"
+	},
+	{
+		"question": "What is the name of the largest ocean in the world?",
+		"options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+		"answer": "Pacific"
+	},
+	{
+		"question": "What is the name of the largest lake in the world?",
+		"options": ["Caspian Sea", "Superior", "Victoria", "Huron"],
+		"answer": "Caspian Sea"
+	},
+	{
+		"question": "What is the name of the largest island in the world?",
+		"options": ["Greenland", "New Guinea", "Borneo", "Madagascar"],
+		"answer": "Greenland"
+	},
+	{
+		"question": "What is the name of the largest desert in the world?",
+		"options": ["Sahara", "Arabian", "Gobi", "Kalahari"],
+		"answer": "Antarctica"
+	},
+	{
+		"question": "What is the name of the largest mountain in the world?",
+		"options": ["Mount Everest", "K2", "Kangchenjunga", "Lhotse"],
+		"answer": "Mount Everest"
+	},
+	{
+		"question": "What is the name of the largest forest in the world?",
+		"options": ["Amazon", "Congo", "Boreal", "Sundarbans"],
+		"answer": "Amazon"
+	},
+	{
+		"question": "what is the smallest country in the world?",
+		"options": ["Monaco", "Vatican City", "Nauru", "Tuvalu"],
+		"answer": "Vatican City"
+	},
+	{
+		"question": "For whom the piramids of Egipt where built?",
+		"options": ["Pharaohs", "Gods", "Stars", "Planets"],
+		"answer": "Pharaohs"
 	}
 ]

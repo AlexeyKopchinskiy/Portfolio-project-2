@@ -13,5 +13,45 @@
 		"question": "Which organelle is responsible for photosynthesis?",
 		"options": ["Chloroplast", "Mitochondria", "Nucleus", "Ribosome"],
 		"answer": "Chloroplast"
+	},
+	{
+		"question": "What is the name of the process by which plants make their food?",
+		"options": ["Photosynthesis", "Respiration", "Transpiration", "Fermentation"],
+		"answer": "Photosynthesis"
+	},
+	{
+		"question": "Is spider an insect?",
+		"options": ["Yes", "No"],
+		"answer": "No"
+	},
+	{
+		"question": "How many legs an ant has?",
+		"options": ["4", "6", "8", "10"],
+		"answer": "6"
+	},
+	{
+		"question": "How many legs the spider has?",
+		"options": ["4", "6", "8", "10"],
+		"answer": "8"
+	},
+	{
+		"question": "Who is the closest ancestor of whales?",
+		"options": ["Dolphins", "Sharks", "Seals", "Hippos"],
+		"answer": "Hippos"
+	},
+	{
+		"question": "What is the name of the largest mammal?",
+		"options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+		"answer": "Blue Whale"
+	},
+	{
+		"question": "What is the name of the largest land mammal?",
+		"options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+		"answer": "Elephant"
+	},
+	{
+		"question": "To which group dinosaurs belong?",
+		"options": ["Reptiles", "Mammals", "Birds", "Amphibians"],
+		"answer": "Reptiles"
 	}
 ]

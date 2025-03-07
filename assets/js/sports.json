@@ -1,0 +1,27 @@
+[
+	{
+		"question": "What is the name of the sport where you can hit your opponent with a ball?",
+        "options": ["Tennis", "Squash", "Badminton", "Table Tennis"],  
+        "answer": "Squash"
+	},
+    {
+        "question": "Who invented the Olympic Games?",
+        "options": ["Greeks", "Romans", "Egyptians", "Persians"],
+        "answer": "Greeks"
+    },
+    {
+        "question": "How fast can an athlete run?",
+        "options": ["10 km/h", "20 km/h", "30 km/h", "40 km/h"],
+        "answer": "40 km/h"
+    },
+    {
+        "question": "What is the maximum number of players in a football team?",
+        "options": ["10", "11", "12", "13"],
+        "answer": "11"
+    },
+    {
+        "question": "What is the maxumum score in a game of tennis?",
+        "options": ["10", "20", "30", "40"],
+        "answer": "40"
+    }
+]

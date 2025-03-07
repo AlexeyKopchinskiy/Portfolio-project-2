@@ -13,5 +13,155 @@
 		"question": "What punishment did God inflict onto the world in the story of Noah's Ark?",
 		"options": ["Great Flood", "Earthquake", "Drought", "Tornado"],
 		"answer": "Great Flood"
+	},
+	{
+		"question": "When did people first came to Austrilia?",
+		"options": ["40,000 years ago", "20,000 years ago", "10,000 years ago", "5,000 years ago"],
+		"answer": "40,000 years ago"
+	},
+	{
+		"question": "What is the name of the first civilization in the world?",
+		"options": ["Sumer", "Egypt", "China", "India"],
+		"answer": "Sumer"
+	},
+	{
+		"question": "What is the name of the first city in the world?",
+		"options": ["Jericho", "Uruk", "Catalhoyuk", "Aleppo"],
+		"answer": "Uruk"
+	},
+	{
+		"question": "What is the name of the first empire in the world?",
+		"options": ["Akkadian Empire", "Babylonian Empire", "Assyrian Empire", "Persian Empire"],
+		"answer": "Akkadian Empire"
+	},
+	{
+		"question": "What is the name of the first law code in the world?",
+		"options": [
+			"Code of Hammurabi",
+			"Code of Ur-Nammu",
+			"Code of Lipit-Ishtar",
+			"Code of Eshnunna"
+		],
+		"answer": "Code of Ur-Nammu"
+	},
+	{
+		"question": "What is the name of the first alphabet in the world?",
+		"options": ["Cuneiform", "Hieroglyphs", "Cretan Hieroglyphs", "Phoenician Alphabet"],
+		"answer": "Cuneiform"
+	},
+	{
+		"question": "What is the name of the first book in the world?",
+		"options": ["Epic of Gilgamesh", "Iliad", "Odyssey", "Aeneid"],
+		"answer": "Epic of Gilgamesh"
+	},
+	{
+		"question": "What is the name of the first library in the world?",
+		"options": [
+			"Library of Ashurbanipal",
+			"Library of Alexandria",
+			"Library of Pergamum",
+			"Library of Celsus"
+		],
+		"answer": "Library of Ashurbanipal"
+	},
+	{
+		"question": "What is the name of the first university in the world?",
+		"options": [
+			"University of Bologna",
+			"University of Paris",
+			"University of Oxford",
+			"University of Al Quaraouiyine"
+		],
+		"answer": "University of Al Quaraouiyine"
+	},
+	{
+		"question": "What is the name of the first hospital in the world?",
+		"options": [
+			"Hospital of the Holy Spirit",
+			"Hotel-Dieu de Paris",
+			"St Bartholomew's Hospital",
+			"Al-Mansuri Hospital"
+		],
+		"answer": "Al-Mansuri Hospital"
+	},
+	{
+		"question": "What is the name of the first bank in the world?",
+		"options": ["Bank of England", "Bank of Venice", "Bank of Amsterdam", "Bank of Sweden"],
+		"answer": "Bank of Venice"
+	},
+	{
+		"question": "What is the name of the first newspaper in the world?",
+		"options": ["The Times", "The Daily Courant", "The London Gazette", "The Oxford Gazette"],
+		"answer": "The Oxford Gazette"
+	},
+	{
+		"question": "What is the name of the first novel in the world?",
+		"options": ["Don Quixote", "Robinson Crusoe", "Gulliver's Travels", "Pamela"],
+		"answer": "Don Quixote"
+	},
+	{
+		"question": "What is the name of the first film in the world?",
+		"options": [
+			"Roundhay Garden Scene",
+			"Workers Leaving the Lumière Factory",
+			"The Arrival of a Train",
+			"The Kiss"
+		],
+		"answer": "Roundhay Garden Scene"
+	},
+	{
+		"question": "What is the name of the first computer in the world?",
+		"options": ["ENIAC", "Colossus", "Z3", "ABC"],
+		"answer": "Colossus"
+	},
+	{
+		"question": "What is the name of the first website in the world?",
+		"options": ["CERN", "NCSA", "W3C", "Netscape"],
+		"answer": "CERN"
+	},
+	{
+		"question": "What is the name of the first social media in the world?",
+		"options": ["Six Degrees", "Friendster", "MySpace", "Facebook"],
+		"answer": "Six Degrees"
+	},
+	{
+		"question": "What was the longest war in the history of the world?",
+		"options": ["Hundred Years' War", "Thirty Years' War", "Eighty Years' War", "Seven Years' War"],
+		"answer": "Hundred Years' War"
+	},
+	{
+		"question": "What was the deadliest war in the history of the world?",
+		"options": ["World War I", "World War II", "Mongol Conquests", "Taiping Rebellion"],
+		"answer": "World War II"
+	},
+	{
+		"question": "Who descowered America?",
+		"options": ["Christopher Columbus", "Amerigo Vespucci", "John Cabot", "Vasco da Gama"],
+		"answer": "Christopher Columbus"
+	},
+	{
+		"question": "Who discovered Australia?",
+		"options": ["James Cook", "Willem Janszoon", "Abel Tasman", "Luis Váez de Torres"],
+		"answer": "Willem Janszoon"
+	},
+	{
+		"question": "Who discovered Antarctica?",
+		"options": [
+			"James Cook",
+			"Willem Janszoon",
+			"Abel Tasman",
+			"Fabian Gottlieb von Bellingshausen"
+		],
+		"answer": "Fabian Gottlieb von Bellingshausen"
+	},
+	{
+		"question": "Who discovered the North Pole?",
+		"options": ["Robert Peary", "Frederick Cook", "Richard E. Byrd", "Roald Amundsen"],
+		"answer": "Robert Peary"
+	},
+	{
+		"question": "Who discovered the South Pole?",
+		"options": ["Robert Falcon Scott", "Roald Amundsen", "Ernest Shackleton", "Richard E. Byrd"],
+		"answer": "Roald Amundsen"
 	}
 ]

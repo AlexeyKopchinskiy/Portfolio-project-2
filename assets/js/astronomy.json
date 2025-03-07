@@ -13,5 +13,40 @@
 		"question": "What is the name of our galaxy?",
 		"options": ["Andromeda", "Triangulum", "Milky Way", "Whirlpool"],
 		"answer": "Milky Way"
+	},
+	{
+		"question": "What is the name of the force holding the planets in orbit around the sun?",
+		"options": ["Gravity", "Magnetism", "Friction", "Inertia"],
+		"answer": "Gravity"
+	},
+	{
+		"question": "What is the name of the first satellite sent into space?",
+		"options": ["Sputnik", "Explorer 1", "Vanguard 1", "Telstar 1"],
+		"answer": "Sputnik"
+	},
+	{
+		"question": "What is the name of the nearest star to Earth?",
+		"options": ["Proxima Centauri", "Alpha Centauri A", "Alpha Centauri B", "Barnard's Star"],
+		"answer": "Proxima Centauri"
+	},
+	{
+		"question": "What is the name of the closest galaxy to the Milky Way?",
+		"options": ["Andromeda", "Triangulum", "Whirlpool", "Pinwheel"],
+		"answer": "Andromeda"
+	},
+	{
+		"question": "Who was using the telescope  when it was invented?",
+		"options": ["Galileo", "Newton", "Hubble", "Copernicus"],
+		"answer": "Galileo"
+	},
+	{
+		"question": "Is the worp speed possible?",
+		"options": ["Yes", "No", "Maybe", "I don't know"],
+		"answer": "No"
+	},
+	{
+		"question": "What is Maggelan clouds?",
+		"options": ["Galaxies", "Planets", "Stars", "Comets"],
+		"answer": "Galaxies"
 	}
 ]

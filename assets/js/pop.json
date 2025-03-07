@@ -1,0 +1,42 @@
+[
+	{
+		"question": "Who wrote the lyrics of the song 'Bohemian Rhapsody'?",
+        "options": ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
+        "answer": "Freddie Mercury"
+	},
+    {
+        "question": "What is the name of the band that wrote the song 'Stairway to Heaven'?",
+        "options": ["Led Zeppelin", "The Beatles", "The Rolling Stones", "Pink Floyd"],
+        "answer": "Led Zeppelin"
+    },
+    {
+        "question": "What is the name of the band that wrote the song 'Hotel California'?",
+        "options": ["The Eagles", "The Doors", "The Who", "The Rolling Stones"],
+        "answer": "The Eagles"
+    },
+    {
+        "question": "To which band John Lenon belonged?",
+        "options": ["The Beatles", "The Rolling Stones", "The Who", "The Doors"],
+        "answer": "The Beatles"
+    },
+    {
+        "question": "How did John Lenon die?",
+        "options": ["Shot", "Car accident", "Cancer", "Heart attack"],
+        "answer": "Shot"
+    },
+    {
+        "question": "How did Freddie Mercury die?",
+        "options": ["AIDS", "Car accident", "Cancer", "Heart attack"],
+        "answer": "AIDS"
+    },
+    {
+        "question": "What is the most popular band in Korea?",
+        "options": ["BTS", "Blackpink", "Twice", "Red Velvet"],
+        "answer": "BTS"
+    },
+    {
+        "question": "What instrument did Jimi Hendrix play?",
+        "options": ["Guitar", "Drums", "Bass", "Piano"],
+        "answer": "Guitar"
+    }
+]
