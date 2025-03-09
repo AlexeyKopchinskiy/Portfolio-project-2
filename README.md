@@ -87,7 +87,7 @@ There seem to be no unfixed bugs at the moment
 
 **The site was deployed to GitHub pages. The steps to deploy are as follows:**
 
-![Here is the link to GitHub Quiz repository:](https://github.com/AlexeyKopchinskiy/Portfolio-project-2)
+Here is the link to GitHub Quiz repository: https://github.com/AlexeyKopchinskiy/Portfolio-project-2
 
 - In the GitHub repository, navigate to the Settings tab
 - Click the "Pages" link at the left side
