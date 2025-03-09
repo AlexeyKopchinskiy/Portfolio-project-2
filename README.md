@@ -1,7 +1,8 @@
 # Portfolio-project-2
+
 JavaScript Essentials - based project
 
-**Basic Knowledge Quiz Portal**
+## Basic Knowledge Quiz Portal
 
 The goal of the website is to test the user's understanding of basic facts related to our world. It has several user-friendly quizzes dedicated to different topics. Each quiz will assign a score for the knowledge in this particular area. After all quizzes are completed, the overall score is displayed, and the pass is granted if the minimum score is reached.
 
@@ -9,19 +10,26 @@ The goal of the website is to test the user's understanding of basic facts relat
 
 ## Website Features
 
-The website features four quizzes with topics targeting knowledge in biology, astronomy, geography, and history. Each quiz-box will hold 3 to 5 questions on the relevant topic. Within each mini-session, there will be several sets of questions. After a set is complete, the achieved score will appear next to the maximum possible score in this set.
+The website features four quizzes with topics targeting knowledge in biology, astronomy, geography, history, sports and pop culture. Each quiz-box will hold 3 to 5 questions on the relevant topic. Within each mini-session, there will be several sets of questions. After a set is complete, the achieved score will appear next to the maximum possible score in this set.
 
-The final score that will pass has to be equal or exceed to the passScore which is currently set to be the total number of questions - 2
+The JSON files, 6 in total with each file dedicated to corresponding topic are located in the assets/js folder. Each JSON file contains 10 to 15 questions. When presented on the Quiz page, these questions are shuffled as well as the order in which the answers show up. After each mini-quiz is completed, the correct answers are dysplayd so that the user can see whether he/she dame a mistake.
+
+![Correct answers after mini-quiz finished:](assets/images/readme/biology-quiz.png)
+
+The final score that will pass has to be equal or exceed to the passScore which is currently set to be 70% of the total number of questions (maximum score)
 
 ### Main Page
 
 ![Main mape snapshot](assets/images/readme/quiz-portal-snapshot1.png)
 
 The main page of the Quiz website contains the following sections:
+
 - **Biology Quiz**: Questions related to biological concepts and facts.
 - **Astronomy Quiz**: Questions related to astronomical phenomena and facts.
 - **Geography Quiz**: Questions related to geographical locations and facts.
 - **History Quiz**: Questions related to historical events and figures.
+- **Sports Quiz**: Sport-related questions.
+- **Pop Quiz**: Questions related to pop-culture.
 
 ### About Us Page
 
@@ -40,7 +48,6 @@ The Contact page provides information on how to get in touch with the Quiz Porta
 - **HTML5**: For structuring the content of the web pages.
 - **CSS3**: For styling the web pages.
 - **JavaScript**: For adding interactivity and functionality to the quizzes.
-- **Bootstrap 5**: For responsive design and layout.
 - **Font Awesome**: For icons used in the navigation and other sections.
 - **Google Fonts**: For custom fonts used in the project.
 
@@ -118,5 +125,5 @@ This project is licensed under the MIT License. See the [LICENSE](https://en.wik
 ## Acknowledgements
 
 - Thanks to [Code Institute](https://codeinstitute.net/) for providing the project guidelines.
-- Special thanks to the contributors of Bootstrap, Font Awesome, and Google Fonts for their amazing tools and resources.
+- Special thanks to the contributors of Font Awesome, and Google Fonts for their amazing tools and resources.
 - Thanks https://ui.dev/amiresponsive for generating snaphot of the website layouts.

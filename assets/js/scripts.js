@@ -106,9 +106,7 @@ function displayCorrectAnswers(quiz, quizForm) {
 function loadQuiz(quizType, formId, scoreId) {
 	fetch(`assets/js/${quizType}.json`)
 		.then((response) => response.json())
-		.then((quiz) => {
-			// Shuffle the questions
-
+		.then((quiz) => 
 			// Select only 3 random questions
 			quiz = getRandomSubset(quiz, 3);
 
@@ -162,6 +160,7 @@ function loadQuiz(quizType, formId, scoreId) {
 
 						totalScoreElement.textContent = totalScore;
 						maxScoreElement.textContent = maxPossibleScore;
+						// set the pass score to 70% of the total score
 						const passScore = Math.round(maxPossibleScore * 0.7);
 
 						if (quizzesCompleted === quizzes.length) {
