@@ -103,104 +103,102 @@ function displayCorrectAnswers(quiz, quizForm) {
  *	The function loadQuiz fetches the quiz questions from a JSON file and displays
  *	them on the page. It also calculates the score and checks if the user has passed the test.
  */
-function loadQuiz(quizType, formId, scoreId) {
-	fetch(`assets/js/${quizType}.json`)
-		.then((response) => response.json())
-		.then((quiz) => 
-			// Select only 3 random questions
-			quiz = getRandomSubset(quiz, 3);
+ function loadQuiz(quizType, formId, scoreId) {
+		fetch(`assets/js/${quizType}.json`)
+			.then((response) => response.json())
+			.then((quiz) => {
+				// Select only 3 random questions
+				const selectedQuiz = getRandomSubset(quiz, 3);
 
-			// Shuffle the answers for each question
-			quiz.forEach((question) => {
-				question.options = shuffleArray(question.options);
-			});
-
-			maxPossibleScore += quiz.length;
-
-			let quizForm = document.getElementById(formId);
-			let scoreElement = document.getElementById(scoreId);
-			let currentQuestionIndex = 0;
-			let score = 0;
-
-			// Check if the event listener is already added and if not,
-			// add the event listener to the form to handle the quiz submission
-			if (!quizForm.dataset.listenerAdded) {
-				quizForm.addEventListener("submit", function (event) {
-					event.preventDefault();
-
-					const selectedOption = document.querySelector(
-						`input[name="${quizType}Question${currentQuestionIndex}"]:checked`
-					);
-
-					if (!selectedOption) {
-						alert(ALERT_SELECT_ANSWER);
-						return;
-					}
-
-					if (selectedOption.value === quiz[currentQuestionIndex].answer) {
-						score++;
-					}
-
-					currentQuestionIndex++;
-
-					if (currentQuestionIndex < quiz.length) {
-						loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
-					} else {
-						totalScore += score;
-						changeColor(score, quiz.length, scoreElement);
-						scoreElement.textContent = `Unit score: ${score} out of ${quiz.length}`;
-						quizzesCompleted++;
-
-						// Display correct answers
-						displayCorrectAnswers(quiz, quizForm);
-
-						if (quizzesCompleted === 1) {
-							totalScoreContainer.classList.remove("hidden");
-						}
-
-						totalScoreElement.textContent = totalScore;
-						maxScoreElement.textContent = maxPossibleScore;
-						// set the pass score to 70% of the total score
-						const passScore = Math.round(maxPossibleScore * 0.7);
-
-						if (quizzesCompleted === quizzes.length) {
-							totalScoreElement.classList.add("highlight");
-							passMessage.classList.remove("hidden");
-							changeColor(score, quiz.length, scoreElement);
-
-							if (totalScore === maxPossibleScore) {
-								passMessage.textContent = "You passed with the highest score! Congratulations!!!";
-								passMessage.classList.add("green");
-								stopCountdown();
-							} else if (totalScore >= passScore) {
-								passMessage.textContent = "You passed through the skin of your teeth... WoW!";
-								passMessage.classList.add("orange");
-								stopCountdown();
-							} else {
-								document.getElementById(
-									"passMessage"
-								).textContent = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...`;
-								passMessage.classList.add("redBorder");
-								passMessage.innerHTML +=
-									'<br><button onClick="resetQuiz()" class="reloadPageButton">Try again</button>';
-								stopCountdown();
-							}
-						}
-						quizForm.querySelector('input[type="submit"]').classList.add("hidden");
-					}
+				// Shuffle the answers for each question
+				selectedQuiz.forEach((question) => {
+					question.options = shuffleArray(question.options);
 				});
 
-				// Mark that the event listener has been added
-				quizForm.dataset.listenerAdded = true;
-			}
+				// Update the maximum possible score
+				maxPossibleScore += selectedQuiz.length;
 
-			loadQuestion(quiz, quizType, currentQuestionIndex, quizForm);
-		})
-		.catch((error) => {
-			// Catch any errors and log them to the console
-			console.error(`Error loading ${quizType}.json: ${error}`);
-		});
-}
+				// Retrieve the form and score elements
+				const quizForm = document.getElementById(formId);
+				const scoreElement = document.getElementById(scoreId);
+				let currentQuestionIndex = 0;
+				let score = 0;
+
+				// Add event listener for quiz submission
+				if (!quizForm.dataset.listenerAdded) {
+					quizForm.addEventListener("submit", function (event) {
+						event.preventDefault();
+
+						const selectedOption = document.querySelector(
+							`input[name="${quizType}Question${currentQuestionIndex}"]:checked`
+						);
+
+						if (!selectedOption) {
+							alert(ALERT_SELECT_ANSWER);
+							return;
+						}
+
+						// Check the answer
+						if (selectedOption.value === selectedQuiz[currentQuestionIndex].answer) {
+							score++;
+						}
+
+						currentQuestionIndex++;
+
+						// Load the next question or finalize the quiz
+						if (currentQuestionIndex < selectedQuiz.length) {
+							loadQuestion(selectedQuiz, quizType, currentQuestionIndex, quizForm);
+						} else {
+							totalScore += score;
+							changeColor(score, selectedQuiz.length, scoreElement);
+							scoreElement.textContent = `Unit score: ${score} out of ${selectedQuiz.length}`;
+							quizzesCompleted++;
+
+							// Display correct answers
+							displayCorrectAnswers(selectedQuiz, quizForm);
+
+							// Show total score
+							if (quizzesCompleted === 1) {
+								totalScoreContainer.classList.remove("hidden");
+							}
+							totalScoreElement.textContent = totalScore;
+							maxScoreElement.textContent = maxPossibleScore;
+
+							// Determine passing criteria
+							const passScore = Math.round(maxPossibleScore * 0.7);
+							if (quizzesCompleted === quizzes.length) {
+								totalScoreElement.classList.add("highlight");
+								passMessage.classList.remove("hidden");
+
+								if (totalScore === maxPossibleScore) {
+									passMessage.textContent = "You passed with the highest score! Congratulations!!!";
+									passMessage.classList.add("green");
+								} else if (totalScore >= passScore) {
+									passMessage.textContent = "You passed through the skin of your teeth... WoW!";
+									passMessage.classList.add("orange");
+								} else {
+									passMessage.innerHTML = `Sorry, you didn't succeed as you need at least ${passScore} points to pass...
+                                    <br><button onClick="resetQuiz()" class="reloadPageButton">Try again</button>`;
+									passMessage.classList.add("redBorder");
+								}
+								stopCountdown();
+							}
+							quizForm.querySelector('input[type="submit"]').classList.add("hidden");
+						}
+					});
+
+					// Mark that the listener has been added to avoid duplicates
+					quizForm.dataset.listenerAdded = true;
+				}
+
+				// Load the first question
+				loadQuestion(selectedQuiz, quizType, currentQuestionIndex, quizForm);
+			})
+			.catch((error) => {
+				console.error(`Error loading ${quizType}.json: ${error}`);
+			});
+ }
+
 
 /**
  *	Function to display the score in different colors depending on the score.
