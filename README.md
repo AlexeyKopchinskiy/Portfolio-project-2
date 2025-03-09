@@ -114,8 +114,6 @@ The active link can be found here: https://alexeykopchinskiy.github.io/Portfolio
 ## Future Enhancements
 
 - Add more quiz categories and questions.
-- Implement user authentication and profile management.
-- Add a leaderboard to display top scores.
 - Enhance the user interface with more animations and effects.
 
 ## License
