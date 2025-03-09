@@ -35,16 +35,6 @@
 		"answer": "Akkadian Empire"
 	},
 	{
-		"question": "What is the name of the first law code in the world?",
-		"options": [
-			"Code of Hammurabi",
-			"Code of Ur-Nammu",
-			"Code of Lipit-Ishtar",
-			"Code of Eshnunna"
-		],
-		"answer": "Code of Ur-Nammu"
-	},
-	{
 		"question": "What is the name of the first alphabet in the world?",
 		"options": ["Cuneiform", "Hieroglyphs", "Cretan Hieroglyphs", "Phoenician Alphabet"],
 		"answer": "Cuneiform"
@@ -73,31 +63,6 @@
 			"University of Al Quaraouiyine"
 		],
 		"answer": "University of Al Quaraouiyine"
-	},
-	{
-		"question": "What is the name of the first hospital in the world?",
-		"options": [
-			"Hospital of the Holy Spirit",
-			"Hotel-Dieu de Paris",
-			"St Bartholomew's Hospital",
-			"Al-Mansuri Hospital"
-		],
-		"answer": "Al-Mansuri Hospital"
-	},
-	{
-		"question": "What is the name of the first bank in the world?",
-		"options": ["Bank of England", "Bank of Venice", "Bank of Amsterdam", "Bank of Sweden"],
-		"answer": "Bank of Venice"
-	},
-	{
-		"question": "What is the name of the first newspaper in the world?",
-		"options": ["The Times", "The Daily Courant", "The London Gazette", "The Oxford Gazette"],
-		"answer": "The Oxford Gazette"
-	},
-	{
-		"question": "What is the name of the first novel in the world?",
-		"options": ["Don Quixote", "Robinson Crusoe", "Gulliver's Travels", "Pamela"],
-		"answer": "Don Quixote"
 	},
 	{
 		"question": "What is the name of the first film in the world?",

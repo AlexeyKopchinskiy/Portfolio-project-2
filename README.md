@@ -15,7 +15,7 @@ The final score that will pass has to be equal or exceed to the passScore which 
 
 ### Main Page
 
-![Main mape snapshot](assets/images/readme/quiz-portal-snapshot1.jpg)
+![Main mape snapshot](assets/images/readme/quiz-portal-snapshot1.png)
 
 The main page of the Quiz website contains the following sections:
 - **Biology Quiz**: Questions related to biological concepts and facts.
@@ -25,7 +25,7 @@ The main page of the Quiz website contains the following sections:
 
 ### About Us Page
 
-![About us page](assets/images/readme/quiz-portal-about-page.jpg)
+![About us page](assets/images/readme/quiz-portal-about-page.png)
 
 The About Us page provides information about the Quiz Portal, its mission, and its vision. It also includes details about the diverse quiz categories, interactive learning features, and the ability to challenge friends.
 
@@ -87,20 +87,22 @@ There seem to be no unfixed bugs at the moment
 
 **The site was deployed to GitHub pages. The steps to deploy are as follows:**
 
- - In the GitHub repository, navigate to the Settings tab
- - Click the "Pages" link at the left side
- - Select "Deploy from a branch" and "main" as the Branch. 
- - Click save
+![Here is the link to GitHub Quiz repository:](https://github.com/AlexeyKopchinskiy/Portfolio-project-2)
+
+- In the GitHub repository, navigate to the Settings tab
+- Click the "Pages" link at the left side
+- Select "Deploy from a branch" and "main" as the Branch. 
+- Click save
 
 The active link can be found here: https://alexeykopchinskiy.github.io/Portfolio-project-2/
 
 **In order to peply the project on the local environment do as follows:**
 
- - Navigate to the Code tab in the GitHub project repository
- - Click on the green Code button and select "Open with GitHub Desktop"
- - please note that in order for the above step to work a GitHub Desktop should be installed locally. 
- - Follow this link to get the GitHub Desktop: https://desktop.github.com/download/
- - From within the GitHub Desktop app click "Open in Visual Studio Code" if this is the editor of your choice
+- Navigate to the Code tab in the GitHub project repository
+- Click on the green Code button and select "Open with GitHub Desktop"
+- please note that in order for the above step to work a GitHub Desktop should be installed locally. 
+- Follow this link to get the GitHub Desktop: https://desktop.github.com/download/
+- From within the GitHub Desktop app click "Open in Visual Studio Code" if this is the editor of your choice
 
 ## Future Enhancements
 
